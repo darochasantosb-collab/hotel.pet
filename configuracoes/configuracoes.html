@@ -1,64 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Hotel Pet - Configurações</title>
-
     <link rel="stylesheet" href="../style/style.css">
-
 </head>
-
 <body>
-
 
     <!-- ========================= -->
     <!-- CABEÇALHO -->
     <!-- ========================= -->
 
     <header class="cabecalho">
-
         <div class="logo">
-
-            <h1>
-                Hotel Pet
-            </h1>
-
+            <h1>Hotel Pet</h1>
         </div>
 
-
         <nav class="menu">
-
             <a href="../reserva/reserva.html">Reservas</a>
-                Reservas
-            </a>
-
             <a href="../pets/pets.html">Pets</a>
-                Pets
-            </a>
-
-            <a href="../usuarios/usuarios.html">Usuarios</a>
-                Usuários
-            </a>
-
+            <a href="../usuarios/usuarios.html">Usuários</a>
             <a href="configuracoes.html">Configurações</a>
-                Configurações
-            </a>
-
-            <a href="../index/index.html">Sair</a>
-             
-            
-
+            <a href="../index.html">Sair</a>
         </nav>
-
     </header>
-
-
 
     <!-- ========================= -->
     <!-- CONTEÚDO -->
@@ -66,356 +32,142 @@
 
     <main class="conteudo">
 
-
         <div class="titulo-pagina">
-
-            <h2>
-                Configurações
-            </h2>
-
-            <p>
-                Gerencie as configurações do Hotel Pet
-            </p>
-
+            <h2>Configurações</h2>
+            <p>Gerencie as configurações do Hotel Pet</p>
         </div>
-
-
 
         <!-- ========================= -->
         <!-- DADOS DO HOTEL -->
         <!-- ========================= -->
 
         <section class="pesquisa">
-
-            <h3>
-                Dados do Hotel
-            </h3>
-
+            <h3>Dados do Hotel</h3>
 
             <div class="campo-pesquisa">
-
-                <label for="nomeHotel">
-                    Nome do Hotel
-                </label>
-
-                <input
-                    type="text"
-                    id="nomeHotel"
-                    value="Hotel Pet"
-                >
-
+                <label for="nomeHotel">Nome do Hotel</label>
+                <input type="text" id="nomeHotel" value="Hotel Pet">
             </div>
-
 
             <div class="campo-pesquisa">
-
-                <label for="telefoneHotel">
-                    Telefone
-                </label>
-
-                <input
-                    type="text"
-                    id="telefoneHotel"
-                    value="(77) 99999-9999"
-                >
-
+                <label for="telefoneHotel">Telefone</label>
+                <input type="text" id="telefoneHotel" value="(77) 99999-9999">
             </div>
-
 
             <div class="campo-pesquisa">
-
-                <label for="emailHotel">
-                    E-mail
-                </label>
-
-                <input
-                    type="email"
-                    id="emailHotel"
-                    value="contato@hotelpet.com"
-                >
-
+                <label for="emailHotel">E-mail</label>
+                <input type="email" id="emailHotel" value="contato@hotelpet.com">
             </div>
-
 
             <div class="campo-pesquisa">
-
-                <label for="enderecoHotel">
-                    Endereço
-                </label>
-
-                <input
-                    type="text"
-                    id="enderecoHotel"
-                    value="Centro - Barreiras, BA"
-                >
-
+                <label for="enderecoHotel">Endereço</label>
+                <input type="text" id="enderecoHotel" value="Centro - Barreiras, BA">
             </div>
-
         </section>
-
-
 
         <!-- ========================= -->
         <!-- CONFIGURAÇÕES DE RESERVA -->
         <!-- ========================= -->
 
         <section class="pesquisa">
-
-            <h3>
-                Configurações de Reserva
-            </h3>
-
+            <h3>Configurações de Reserva</h3>
 
             <div class="campo-pesquisa">
-
-                <label for="valorDiaria">
-                    Valor da diária
-                </label>
-
-                <input
-                    type="number"
-                    id="valorDiaria"
-                    value="80"
-                    min="0"
-                    step="0.01"
-                >
-
+                <label for="valorDiaria">Valor da diária</label>
+                <input type="number" id="valorDiaria" value="80" min="0" step="0.01">
             </div>
-
 
             <div class="campo-pesquisa">
-
-                <label for="horarioEntrada">
-                    Horário de entrada
-                </label>
-
-                <input
-                    type="time"
-                    id="horarioEntrada"
-                    value="08:00"
-                >
-
+                <label for="horarioEntrada">Horário de entrada</label>
+                <input type="time" id="horarioEntrada" value="08:00">
             </div>
-
 
             <div class="campo-pesquisa">
-
-                <label for="horarioSaida">
-                    Horário de saída
-                </label>
-
-                <input
-                    type="time"
-                    id="horarioSaida"
-                    value="18:00"
-                >
-
+                <label for="horarioSaida">Horário de saída</label>
+                <input type="time" id="horarioSaida" value="18:00">
             </div>
-
         </section>
-
-
 
         <!-- ========================= -->
         <!-- PREFERÊNCIAS -->
         <!-- ========================= -->
 
         <section class="pesquisa">
-
-            <h3>
-                Preferências
-            </h3>
-
+            <h3>Preferências</h3>
 
             <div class="campo-pesquisa">
-
-                <label for="notificacao">
-                    Notificações
-                </label>
-
+                <label for="notificacao">Notificações</label>
                 <select id="notificacao">
-
-                    <option value="sim">
-                        Ativadas
-                    </option>
-
-                    <option value="nao">
-                        Desativadas
-                    </option>
-
+                    <option value="sim">Ativadas</option>
+                    <option value="nao">Desativadas</option>
                 </select>
-
             </div>
-
 
             <div class="campo-pesquisa">
-
-                <label for="tema">
-                    Tema do sistema
-                </label>
-
+                <label for="tema">Tema do sistema</label>
                 <select id="tema">
-
-                    <option value="claro">
-                        Claro
-                    </option>
-
-                    <option value="escuro">
-                        Escuro
-                    </option>
-
+                    <option value="claro">Claro</option>
+                    <option value="escuro">Escuro</option>
                 </select>
-
             </div>
-
         </section>
-
-
 
         <!-- ========================= -->
         <!-- SEGURANÇA -->
         <!-- ========================= -->
 
         <section class="pesquisa">
-
-            <h3>
-                Segurança
-            </h3>
-
+            <h3>Segurança</h3>
 
             <div class="campo-pesquisa">
-
-                <label for="senhaAtual">
-                    Senha atual
-                </label>
-
-                <input
-                    type="password"
-                    id="senhaAtual"
-                    placeholder="Digite a senha atual"
-                >
-
+                <label for="senhaAtual">Senha atual</label>
+                <input type="password" id="senhaAtual" placeholder="Digite a senha atual">
             </div>
-
 
             <div class="campo-pesquisa">
-
-                <label for="novaSenha">
-                    Nova senha
-                </label>
-
-                <input
-                    type="password"
-                    id="novaSenha"
-                    placeholder="Digite a nova senha"
-                >
-
+                <label for="novaSenha">Nova senha</label>
+                <input type="password" id="novaSenha" placeholder="Digite a nova senha">
             </div>
-
 
             <div class="campo-pesquisa">
-
-                <label for="confirmarSenha">
-                    Confirmar nova senha
-                </label>
-
-                <input
-                    type="password"
-                    id="confirmarSenha"
-                    placeholder="Digite novamente a nova senha"
-                >
-
+                <label for="confirmarSenha">Confirmar nova senha</label>
+                <input type="password" id="confirmarSenha" placeholder="Digite novamente a nova senha">
             </div>
-
         </section>
-
-
 
         <!-- ========================= -->
         <!-- BOTÕES -->
         <!-- ========================= -->
 
         <div class="acoes">
-
-            <button
-                type="button"
-                class="botao-editar"
-                onclick="salvarConfiguracoes()"
-            >
-                Salvar configurações
-            </button>
-
-
-            <button
-                type="button"
-                class="botao-visualizar"
-                onclick="voltarInicio()"
-            >
-                Voltar
-            </button>
-
+            <button type="button" class="botao-editar" onclick="salvarConfiguracoes()">Salvar configurações</button>
+            <button type="button" class="botao-visualizar" onclick="voltarInicio()">Voltar</button>
         </div>
 
-
     </main>
-
-
 
     <!-- ========================= -->
     <!-- JAVASCRIPT -->
     <!-- ========================= -->
 
     <script>
-
-
         function salvarConfiguracoes() {
-
-            const nome =
-                document.getElementById("nomeHotel").value;
-
-            const telefone =
-                document.getElementById("telefoneHotel").value;
-
-            const email =
-                document.getElementById("emailHotel").value;
-
-            const valor =
-                document.getElementById("valorDiaria").value;
-
-
-            const novaSenha =
-                document.getElementById("novaSenha").value;
-
-            const confirmarSenha =
-                document.getElementById("confirmarSenha").value;
-
+            const nome = document.getElementById("nomeHotel").value;
+            const telefone = document.getElementById("telefoneHotel").value;
+            const email = document.getElementById("emailHotel").value;
+            const valor = document.getElementById("valorDiaria").value;
+            const novaSenha = document.getElementById("novaSenha").value;
+            const confirmarSenha = document.getElementById("confirmarSenha").value;
 
             if (novaSenha !== confirmarSenha) {
-
-                alert(
-                    "A nova senha e a confirmação não são iguais."
-                );
-
+                alert("A nova senha e a confirmação não são iguais.");
                 return;
-
             }
 
-
-            if (
-                nome === "" ||
-                telefone === "" ||
-                email === "" ||
-                valor === ""
-            ) {
-
-                alert(
-                    "Preencha todos os campos obrigatórios."
-                );
-
+            if (nome === "" || telefone === "" || email === "" || valor === "") {
+                alert("Preencha todos os campos obrigatórios.");
                 return;
-
             }
-
 
             alert(
                 "Configurações salvas com sucesso!\n\n" +
@@ -424,22 +176,12 @@
                 "\nE-mail: " + email +
                 "\nValor da diária: R$ " + valor
             );
-
         }
-
-
 
         function voltarInicio() {
-
-            window.location.href =
-                "../pets/pets.html";
-
+            window.location.href = "../pets/pets.html";
         }
-
     </script>
 
-
 </body>
-
 </html>
-```
