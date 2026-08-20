@@ -1,12 +1,15 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 35ce279fc6cccbb980c054e22d7250a5b9c02e46
 <!DOCTYPE html>
 
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet</title>
+<<<<<<< HEAD
 
 ```
 <style>
@@ -477,3 +480,163 @@ document
 </body>
 
 </html>
+=======
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #321b10, #60402c, #9a7254);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .caixa {
+            width: 100%;
+            max-width: 430px;
+            background: #fffaf5;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+        }
+        .logo { text-align: center; margin-bottom: 25px; }
+        .icone {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: #6b4630;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+        .logo h1 { margin: 0; color: #4a2c1c; font-size: 32px; }
+        .logo p { color: #806b5d; }
+        h2 { text-align: center; color: #4a2c1c; }
+        .campo { margin-bottom: 17px; }
+        .campo label {
+            display: block;
+            margin-bottom: 7px;
+            color: #4a2c1c;
+            font-weight: bold;
+        }
+        .campo input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cdb8a7;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+        .campo input:focus { border-color: #6b4630; }
+        .botao {
+            width: 100%;
+            padding: 14px;
+            border: 0;
+            border-radius: 8px;
+            background: #6b4630;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .botao:hover { background: #4a2c1c; }
+        .link {
+            width: 100%;
+            margin-top: 15px;
+            border: 0;
+            background: transparent;
+            color: #6b4630;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .mensagem {
+            text-align: center;
+            margin-top: 15px;
+            color: #6b4630;
+            font-weight: bold;
+        }
+        .escondido { display: none; }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <div class="logo">
+            <div class="icone">🐾</div>
+            <h1>Hotel Pet</h1>
+            <p>Cuidando do seu melhor amigo</p>
+        </div>
+
+        <div id="login">
+            <h2>Entrar</h2>
+            <form id="formLogin">
+                <div class="campo">
+                    <label for="emailLogin">E-mail</label>
+                    <input type="email" id="emailLogin" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="campo">
+                    <label for="senhaLogin">Senha</label>
+                    <input type="password" id="senhaLogin" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="botao">Entrar</button>
+            </form>
+            <button type="button" class="link" onclick="mostrarCadastro()">Criar conta</button>
+            <div id="mensagemLogin" class="mensagem"></div>
+        </div>
+
+        <div id="cadastro" class="escondido">
+            <h2>Criar conta</h2>
+            <form id="formCadastro">
+                <div class="campo">
+                    <label for="nomeCadastro">Nome</label>
+                    <input type="text" id="nomeCadastro" placeholder="Digite seu nome" required>
+                </div>
+                <div class="campo">
+                    <label for="emailCadastro">E-mail</label>
+                    <input type="email" id="emailCadastro" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="campo">
+                    <label for="senhaCadastro">Senha</label>
+                    <input type="password" id="senhaCadastro" placeholder="Crie uma senha" required>
+                </div>
+                <button type="submit" class="botao">Criar conta</button>
+            </form>
+            <button type="button" class="link" onclick="mostrarLogin()">Voltar para entrar</button>
+            <div id="mensagemCadastro" class="mensagem"></div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarCadastro() {
+            document.getElementById('login').classList.add('escondido');
+            document.getElementById('cadastro').classList.remove('escondido');
+        }
+
+        function mostrarLogin() {
+            document.getElementById('cadastro').classList.add('escondido');
+            document.getElementById('login').classList.remove('escondido');
+        }
+
+        document.getElementById('formLogin').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('emailLogin').value;
+            const senha = document.getElementById('senhaLogin').value;
+
+            if (email && senha) {
+                window.location.href = '../usuarios/usuarios.html';
+            }
+        });
+
+        document.getElementById('formCadastro').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('mensagemCadastro').textContent = 'Conta criada com sucesso! Agora você pode entrar.';
+            setTimeout(mostrarLogin, 1200);
+        });
+    </script>
+</body>
+</html>
+>>>>>>> 35ce279fc6cccbb980c054e22d7250a5b9c02e46
