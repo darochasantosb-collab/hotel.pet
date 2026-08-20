@@ -67,23 +67,12 @@
             cursor: pointer;
         }
         .botao:hover { background: #4a2c1c; }
-        .link {
-            width: 100%;
-            margin-top: 15px;
-            border: 0;
-            background: transparent;
-            color: #6b4630;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 15px;
-        }
         .mensagem {
             text-align: center;
             margin-top: 15px;
             color: #6b4630;
             font-weight: bold;
         }
-        .escondido { display: none; }
     </style>
 </head>
 <body>
@@ -94,113 +83,35 @@
             <p>Cuidando do seu melhor amigo</p>
         </div>
 
-        <div id="login">
-            <h2>Entrar</h2>
-            <form id="formLogin">
-                <div class="campo">
-                    <label>E-mail</label>
-                    <input type="email" id="emailLogin" placeholder="Digite seu e-mail" required>
-                </div>
-                <div class="campo">
-                    <label>Senha</label>
-                    <input type="password" id="senhaLogin" placeholder="Digite sua senha" required>
-                </div>
-                <button type="submit" class="botao">Entrar</button>
-            </form>
-            <button type="button" class="link" id="abrirCadastro">Criar conta</button>
-            <div id="msgLogin" class="mensagem"></div>
-        </div>
-
-        <div id="cadastro" class="escondido">
-            <h2>Criar conta</h2>
-            <form id="formCadastro">
-                <div class="campo">
-                    <label>Nome</label>
-                    <input type="text" id="nome" placeholder="Digite seu nome" required>
-                </div>
-                <div class="campo">
-                    <label>E-mail</label>
-                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
-                </div>
-                <div class="campo">
-                    <label>Senha</label>
-                    <input type="password" id="senha" placeholder="Digite uma senha" required>
-                </div>
-                <div class="campo">
-                    <label>Confirmar senha</label>
-                    <input type="password" id="confirmar" placeholder="Digite a senha novamente" required>
-                </div>
-                <button type="submit" class="botao">Criar conta</button>
-            </form>
-            <button type="button" class="link" id="voltarLogin">Voltar para login</button>
-            <div id="msgCadastro" class="mensagem"></div>
-        </div>
+        <h2>Entrar</h2>
+        <form id="formLogin">
+            <div class="campo">
+                <label>E-mail</label>
+                <input type="email" id="emailLogin" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="campo">
+                <label>Senha</label>
+                <input type="password" id="senhaLogin" placeholder="Digite sua senha" required>
+            </div>
+            <button type="submit" class="botao">Entrar</button>
+        </form>
+        <div id="msgLogin" class="mensagem"></div>
     </div>
 
 <script>
-/* ABRIR CADASTRO */
-document.getElementById("abrirCadastro").onclick = function() {
-    document.getElementById("login").classList.add("escondido");
-    document.getElementById("cadastro").classList.remove("escondido");
-};
-
-/* VOLTAR PARA LOGIN */
-document.getElementById("voltarLogin").onclick = function() {
-    document.getElementById("cadastro").classList.add("escondido");
-    document.getElementById("login").classList.remove("escondido");
-};
-
-/* CRIAR CONTA */
-document.getElementById("formCadastro").onsubmit = function(event) {
-    event.preventDefault();
-
-    const nome = document.getElementById("nome").value.trim();
-    const email = document.getElementById("email").value.trim().toLowerCase();
-    const senha = document.getElementById("senha").value;
-    const confirmar = document.getElementById("confirmar").value;
-
-    if (senha !== confirmar) {
-        document.getElementById("msgCadastro").innerText = "As senhas não são iguais.";
-        return;
-    }
-
-    if (senha.length < 4) {
-        document.getElementById("msgCadastro").innerText = "A senha precisa ter pelo menos 4 caracteres.";
-        return;
-    }
-
-    const usuario = { nome: nome, email: email, senha: senha };
-    localStorage.setItem("hotelPetUsuario", JSON.stringify(usuario));
-
-    document.getElementById("msgCadastro").innerText = "Conta criada com sucesso!";
-    document.getElementById("emailLogin").value = email;
-    document.getElementById("senhaLogin").value = "";
-
-    setTimeout(function() {
-        document.getElementById("cadastro").classList.add("escondido");
-        document.getElementById("login").classList.remove("escondido");
-    }, 1000);
-};
-
-/* LOGIN — SEM A MENSAGEM "Crie uma conta primeiro" */
+/* LOGIN — Aceita QUALQUER e-mail e senha! */
 document.getElementById("formLogin").onsubmit = function(event) {
     event.preventDefault();
 
-    const email = document.getElementById("emailLogin").value.trim().toLowerCase();
+    const email = document.getElementById("emailLogin").value.trim();
     const senha = document.getElementById("senhaLogin").value;
-    const dados = localStorage.getItem("hotelPetUsuario");
 
-    if (dados) {
-        const usuario = JSON.parse(dados);
-        if (email === usuario.email && senha === usuario.senha) {
-            localStorage.setItem("hotelPetLogado", "true");
-            window.location.href = "usuarios/usuarios.html";
-            return;
-        }
+    if (email && senha.length >= 4) {
+        localStorage.setItem("hotelPetLogado", "true");
+        window.location.href = "usuarios/usuarios.html";
+    } else {
+        document.getElementById("msgLogin").innerText = "Digite um e-mail e senha com pelo menos 4 caracteres.";
     }
-
-    // Se não tiver cadastro ou estiver errado, mostra só isso:
-    document.getElementById("msgLogin").innerText = "E-mail ou senha incorretos.";
 };
 </script>
 </body>
