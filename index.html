@@ -67,12 +67,23 @@
             cursor: pointer;
         }
         .botao:hover { background: #4a2c1c; }
+        .link {
+            width: 100%;
+            margin-top: 15px;
+            border: 0;
+            background: transparent;
+            color: #6b4630;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
         .mensagem {
             text-align: center;
             margin-top: 15px;
             color: #6b4630;
             font-weight: bold;
         }
+        .escondido { display: none; }
     </style>
 </head>
 <body>
@@ -83,27 +94,101 @@
             <p>Cuidando do seu melhor amigo</p>
         </div>
 
-        <h2>Entrar</h2>
-        <form id="formLogin">
-            <div class="campo">
-                <label>E-mail</label>
-                <input type="email" id="emailLogin" placeholder="Digite seu e-mail" required>
-            </div>
-            <div class="campo">
-                <label>Senha</label>
-                <input type="password" id="senhaLogin" placeholder="Digite sua senha" required>
-            </div>
-            <button type="submit" class="botao">Entrar</button>
-        </form>
-        <div id="msgLogin" class="mensagem"></div>
+        <!-- TELA DE LOGIN -->
+        <div id="login">
+            <h2>Entrar</h2>
+            <form id="formLogin">
+                <div class="campo">
+                    <label>E-mail</label>
+                    <input type="email" id="emailLogin" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="campo">
+                    <label>Senha</label>
+                    <input type="password" id="senhaLogin" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="botao">Entrar</button>
+            </form>
+            <button type="button" class="link" id="abrirCadastro">Criar conta</button>
+            <div id="msgLogin" class="mensagem"></div>
+        </div>
+
+        <!-- TELA DE CADASTRO -->
+        <div id="cadastro" class="escondido">
+            <h2>Criar conta</h2>
+            <form id="formCadastro">
+                <div class="campo">
+                    <label>Nome</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="campo">
+                    <label>E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="campo">
+                    <label>Senha</label>
+                    <input type="password" id="senha" placeholder="Crie uma senha (mínimo 4 caracteres)" required>
+                </div>
+                <div class="campo">
+                    <label>Confirmar senha</label>
+                    <input type="password" id="confirmar" placeholder="Digite a senha novamente" required>
+                </div>
+                <button type="submit" class="botao">Criar conta</button>
+            </form>
+            <button type="button" class="link" id="voltarLogin">Voltar para login</button>
+            <div id="msgCadastro" class="mensagem"></div>
+        </div>
     </div>
 
 <script>
-/* LOGIN — Aceita QUALQUER e-mail e senha! */
+/* ABRIR CADASTRO */
+document.getElementById("abrirCadastro").onclick = function() {
+    document.getElementById("login").classList.add("escondido");
+    document.getElementById("cadastro").classList.remove("escondido");
+};
+
+/* VOLTAR PARA LOGIN */
+document.getElementById("voltarLogin").onclick = function() {
+    document.getElementById("cadastro").classList.add("escondido");
+    document.getElementById("login").classList.remove("escondido");
+    document.getElementById("msgLogin").innerText = "";
+};
+
+/* CRIAR CONTA */
+document.getElementById("formCadastro").onsubmit = function(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim().toLowerCase();
+    const senha = document.getElementById("senha").value;
+    const confirmar = document.getElementById("confirmar").value;
+
+    if (senha !== confirmar) {
+        document.getElementById("msgCadastro").innerText = "As senhas não são iguais.";
+        return;
+    }
+    if (senha.length < 4) {
+        document.getElementById("msgCadastro").innerText = "A senha precisa ter pelo menos 4 caracteres.";
+        return;
+    }
+
+    // Salva o usuário
+    const usuario = { nome: nome, email: email, senha: senha };
+    localStorage.setItem("hotelPetUsuario", JSON.stringify(usuario));
+
+    document.getElementById("msgCadastro").innerText = "Conta criada com sucesso!";
+    document.getElementById("emailLogin").value = email;
+
+    setTimeout(function() {
+        document.getElementById("cadastro").classList.add("escondido");
+        document.getElementById("login").classList.remove("escondido");
+    }, 1200);
+};
+
+/* LOGIN — Aceita qualquer e-mail/senha OU usa conta cadastrada */
 document.getElementById("formLogin").onsubmit = function(event) {
     event.preventDefault();
 
-    const email = document.getElementById("emailLogin").value.trim();
+    const email = document.getElementById("emailLogin").value.trim().toLowerCase();
     const senha = document.getElementById("senhaLogin").value;
 
     if (email && senha.length >= 4) {
