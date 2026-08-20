@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet</title>
     <style>
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            margin: 0;
             min-height: 100vh;
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #321b10, #60402c, #9a7254);
@@ -17,8 +16,7 @@
             padding: 20px;
         }
         .caixa {
-            width: 100%;
-            max-width: 430px;
+            width: 100%; max-width: 430px;
             background: #fffaf5;
             padding: 40px;
             border-radius: 22px;
@@ -26,63 +24,32 @@
         }
         .logo { text-align: center; margin-bottom: 25px; }
         .icone {
-            width: 75px;
-            height: 75px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            background: #6b4630;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
+            width: 75px; height: 75px; margin: 0 auto 15px;
+            border-radius: 50%; background: #6b4630;
+            display: flex; align-items: center; justify-content: center; font-size: 36px;
         }
-        .logo h1 { margin: 0; color: #4a2c1c; font-size: 32px; }
-        .logo p { color: #806b5d; }
-        h2 { text-align: center; color: #4a2c1c; }
+        .logo h1 { color: #4a2c1c; font-size: 32px; }
+        .logo p { color: #806b5d; margin-top: 5px; }
+        h2 { text-align: center; color: #4a2c1c; margin-bottom: 20px; }
         .campo { margin-bottom: 17px; }
-        .campo label {
-            display: block;
-            margin-bottom: 7px;
-            color: #4a2c1c;
-            font-weight: bold;
+        .campo label { display: block; margin-bottom: 7px; color: #4a2c1c; font-weight: bold; }
+        .campo input, .campo select {
+            width: 100%; padding: 13px; border: 1px solid #cdb8a7;
+            border-radius: 8px; font-size: 15px; outline: none;
         }
-        .campo input {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #cdb8a7;
-            border-radius: 8px;
-            font-size: 15px;
-            outline: none;
-        }
-        .campo input:focus { border-color: #6b4630; }
+        .campo input:focus, .campo select:focus { border-color: #6b4630; }
         .botao {
-            width: 100%;
-            padding: 14px;
-            border: 0;
-            border-radius: 8px;
-            background: #6b4630;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
+            width: 100%; padding: 14px; border: 0; border-radius: 8px;
+            background: #6b4630; color: white; font-size: 16px;
+            font-weight: bold; cursor: pointer; transition: 0.2s;
         }
         .botao:hover { background: #4a2c1c; }
         .link {
-            width: 100%;
-            margin-top: 15px;
-            border: 0;
-            background: transparent;
-            color: #6b4630;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 15px;
+            width: 100%; margin-top: 15px; border: 0;
+            background: transparent; color: #6b4630;
+            font-weight: bold; cursor: pointer; font-size: 15px;
         }
-        .mensagem {
-            text-align: center;
-            margin-top: 15px;
-            color: #6b4630;
-            font-weight: bold;
-        }
+        .mensagem { text-align: center; margin-top: 15px; color: #6b4630; font-weight: bold; }
         .escondido { display: none; }
     </style>
 </head>
@@ -94,9 +61,8 @@
             <p>Cuidando do seu melhor amigo</p>
         </div>
 
-        <!-- TELA DE LOGIN -->
         <div id="login">
-            
+            <h2>Entrar</h2>
             <form id="formLogin">
                 <div class="campo">
                     <label>E-mail</label>
@@ -112,12 +78,11 @@
             <div id="msgLogin" class="mensagem"></div>
         </div>
 
-        <!-- TELA DE CADASTRO -->
         <div id="cadastro" class="escondido">
             <h2>Criar conta</h2>
             <form id="formCadastro">
                 <div class="campo">
-                    <label>Nome</label>
+                    <label>Nome completo</label>
                     <input type="text" id="nome" placeholder="Digite seu nome" required>
                 </div>
                 <div class="campo">
@@ -126,7 +91,7 @@
                 </div>
                 <div class="campo">
                     <label>Senha</label>
-                    <input type="password" id="senha" placeholder="Crie uma senha (mínimo 4 caracteres)" required>
+                    <input type="password" id="senha" placeholder="Mínimo 4 caracteres" required>
                 </div>
                 <div class="campo">
                     <label>Confirmar senha</label>
@@ -140,53 +105,41 @@
     </div>
 
 <script>
-/* ABRIR TELA DE CADASTRO */
-document.getElementById("abrirCadastro").onclick = function() {
+document.getElementById("abrirCadastro").onclick = () => {
     document.getElementById("login").classList.add("escondido");
     document.getElementById("cadastro").classList.remove("escondido");
 };
-
-/* VOLTAR PARA LOGIN */
-document.getElementById("voltarLogin").onclick = function() {
+document.getElementById("voltarLogin").onclick = () => {
     document.getElementById("cadastro").classList.add("escondido");
     document.getElementById("login").classList.remove("escondido");
     document.getElementById("msgLogin").innerText = "";
 };
 
-/* CRIAR CONTA */
-document.getElementById("formCadastro").onsubmit = function(event) {
-    event.preventDefault();
-
+document.getElementById("formCadastro").onsubmit = e => {
+    e.preventDefault();
     const nome = document.getElementById("nome").value.trim();
     const email = document.getElementById("email").value.trim().toLowerCase();
     const senha = document.getElementById("senha").value;
     const confirmar = document.getElementById("confirmar").value;
 
-    if (senha !== confirmar) {
-        document.getElementById("msgCadastro").innerText = "As senhas não são iguais.";
-        return;
-    }
-    if (senha.length < 4) {
-        document.getElementById("msgCadastro").innerText = "A senha precisa ter pelo menos 4 caracteres.";
-        return;
-    }
+    if (senha !== confirmar)
+        return document.getElementById("msgCadastro").innerText = "As senhas não coincidem.";
+    if (senha.length < 4)
+        return document.getElementById("msgCadastro").innerText = "Mínimo 4 caracteres na senha.";
 
-    const usuario = { nome: nome, email: email, senha: senha };
+    const usuario = { nome, email, senha, foto: "" };
     localStorage.setItem("hotelPetUsuario", JSON.stringify(usuario));
-
     document.getElementById("msgCadastro").innerText = "Conta criada com sucesso!";
     document.getElementById("emailLogin").value = email;
 
-    setTimeout(function() {
+    setTimeout(() => {
         document.getElementById("cadastro").classList.add("escondido");
         document.getElementById("login").classList.remove("escondido");
     }, 1200);
 };
 
-/* LOGIN */
-document.getElementById("formLogin").onsubmit = function(event) {
-    event.preventDefault();
-
+document.getElementById("formLogin").onsubmit = e => {
+    e.preventDefault();
     const email = document.getElementById("emailLogin").value.trim().toLowerCase();
     const senha = document.getElementById("senhaLogin").value;
     const dadosSalvos = localStorage.getItem("hotelPetUsuario");
@@ -194,18 +147,17 @@ document.getElementById("formLogin").onsubmit = function(event) {
     if (!dadosSalvos) {
         if (email && senha.length >= 4) {
             localStorage.setItem("hotelPetLogado", "true");
-            window.location.href = "../usuarios/usuarios.html";
+            window.location.href = "reserva/reserva.html"; // ✅ VAI PARA RESERVAS!
         } else {
-            document.getElementById("msgLogin").innerText = "Digite um e-mail e senha com pelo menos 4 caracteres.";
+            document.getElementById("msgLogin").innerText = "Preencha e-mail e senha (mín. 4 caracteres).";
         }
         return;
     }
 
     const usuario = JSON.parse(dadosSalvos);
-
     if (email === usuario.email && senha === usuario.senha) {
         localStorage.setItem("hotelPetLogado", "true");
-        window.location.href = "../usuarios/usuarios.html";
+        window.location.href = "reserva/reserva.html"; // ✅ VAI PARA RESERVAS!
     } else {
         document.getElementById("msgLogin").innerText = "E-mail ou senha incorretos.";
     }
