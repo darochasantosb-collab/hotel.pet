@@ -661,3 +661,3874 @@ body:has(#telaCadastro) .pesquisa {
     }
 
 }
+```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+```
+```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+```
+```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+```
+v```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+```
+```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+```
+```css
+/* ================================= */
+/* LOGIN - HOTEL PET */
+/* ================================= */
+
+.pagina-login {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2418,
+            #6f4e37,
+            #a67c52
+        );
+
+}
+
+
+/* ================================= */
+/* CAIXA PRINCIPAL */
+/* ================================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 42px;
+
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* ================================= */
+/* CABEÇALHO */
+/* ================================= */
+
+.login-cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icone-pet {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+.login-cabecalho h1 {
+
+    margin: 0;
+
+    color: #4b2e1f;
+
+    font-size: 34px;
+
+}
+
+
+.login-cabecalho p {
+
+    margin-top: 8px;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.login-container h2 {
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+.campo-login {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo-login label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4b2e1f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo-login input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8c5b5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #3b2418;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo-login input:focus {
+
+    border-color: #6f4e37;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 78, 55, 0.12);
+
+}
+
+
+/* ================================= */
+/* BOTÃO ENTRAR */
+/* ================================= */
+
+.botao-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6f4e37;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-login:hover {
+
+    background: #4b2e1f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================================= */
+/* SEPARADOR */
+/* ================================= */
+
+.separador {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #a28b7a;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddcfc3;
+
+}
+
+
+.separador span {
+
+    font-size: 13px;
+
+}
+
+
+/* ================================= */
+/* CRIAR CONTA */
+/* ================================= */
+
+.criar-conta-texto {
+
+    text-align: center;
+
+    color: #806b5d;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #6f4e37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.link-conta:hover {
+
+    color: #3b2418;
+
+    text-decoration: underline;
+
+}
+
+
+/* ================================= */
+/* RODAPÉ */
+/* ================================= */
+
+.login-rodape {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eadfd7;
+
+    text-align: center;
+
+}
+
+
+.login-rodape p {
+
+    margin: 0;
+
+    color: #a28b7a;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 500px) {
+
+    .pagina-login {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .login-container {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .login-cabecalho h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+/* ===== LOGIN HOTEL PET ===== */
+
+.pagina-login {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4b2e1f;
+}
+
+.login-container {
+    width: 400px;
+    padding: 40px;
+    background: #fffaf5;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.login-cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-cabecalho h1 {
+    color: #5a3825;
+    margin: 10px 0;
+}
+
+.login-cabecalho p {
+    color: #80644f;
+}
+
+.icone-pet {
+    font-size: 40px;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #5a3825;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #80644f;
+    margin-bottom: 25px;
+}
+
+.campo-login {
+    margin-bottom: 18px;
+}
+
+.campo-login label {
+    display: block;
+    margin-bottom: 7px;
+    color: #5a3825;
+    font-weight: bold;
+}
+
+.campo-login input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c8ad98;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.botao-login {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #6f4e37;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-login:hover {
+    background: #4b2e1f;
+}
+
+.criar-conta-texto {
+    text-align: center;
+    color: #80644f;
+    margin-top: 20px;
+}
+
+.link-conta {
+    border: none;
+    background: none;
+    color: #6f4e37;
+    font-weight: bold;
+    cursor: pointer;
+}
