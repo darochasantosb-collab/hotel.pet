@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet - Configurações</title>
+
+    <link rel="stylesheet" href="../style/style.css">
+
+    <style>
+
+        .configuracoes-container {
+            max-width: 700px;
+            margin: 30px auto;
+        }
+
+        .config-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+        }
+
+        .config-campo {
+            margin-bottom: 25px;
+        }
+
+        .config-campo label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .config-campo input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .botao-alterar {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .botao-alterar:hover {
+            opacity: 0.9;
+        }
+
+        .mensagem {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .valor-atual {
+            margin-top: 10px;
+            color: #555;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho">
+
+        <div class="logo">
+
+            <h1>
+                Hotel Pet
+            </h1>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="../reserva/reserva.html">
+                Reservas
+            </a>
+
+            <a href="../pets/pets.html">
+                Pets
+            </a>
+
+            <a href="../usuarios/usuarios.html">
+                Usuários
+            </a>
+
+            <a href="configuracoes.html">
+                Configurações
+            </a>
+
+            <a href="../index/index.html">
+                Sair
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="conteudo">
+
+
+        <div class="titulo-pagina">
+
+            <h2>
+                Configurações
+            </h2>
+
+            <p>
+                Gerenciamento das configurações do Hotel Pet
+            </p>
+
+        </div>
+
+
+
+        <div class="configuracoes-container">
+
+
+            <div class="config-card">
+
+
+                <!-- VALOR DA DIÁRIA -->
+
+                <div class="config-campo">
+
+                    <label for="valorDiaria">
+                        Valor da diária
+                    </label>
+
+                    <input
+                        type="number"
+                        id="valorDiaria"
+                        value="80"
+                        min="0"
+                        step="0.01"
+                    >
+
+                    <p class="valor-atual">
+
+                        Valor atual:
+                        R$ <span id="valorAtual">80,00</span>
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- VAGAS -->
+
+                <div class="config-campo">
+
+                    <label for="vagasDisponiveis">
+                        Número de vagas disponíveis
+                    </label>
+
+                    <input
+                        type="number"
+                        id="vagasDisponiveis"
+                        value="20"
+                        min="0"
+                    >
+
+                    <p class="valor-atual">
+
+                        Vagas atuais:
+                        <span id="vagasAtuais">20</span>
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    class="botao-alterar"
+                    onclick="alterarConfiguracoes()"
+                >
+                    Alterar configurações
+                </button>
+
+
+
+                <!-- MENSAGEM -->
+
+                <div
+                    id="mensagem"
+                    class="mensagem"
+                >
+                    Configurações alteradas com sucesso!
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <script>
+
+        function alterarConfiguracoes() {
+
+            let valor =
+                document.getElementById("valorDiaria").value;
+
+            let vagas =
+                document.getElementById("vagasDisponiveis").value;
+
+
+            if (valor === "" || vagas === "") {
+
+                alert(
+                    "Preencha todos os campos."
+                );
+
+                return;
+
+            }
+
+
+            document.getElementById("valorAtual").innerText =
+                Number(valor).toFixed(2).replace(".", ",");
+
+
+            document.getElementById("vagasAtuais").innerText =
+                vagas;
+
+
+            document.getElementById("mensagem").style.display =
+                "block";
+
+
+            setTimeout(function() {
+
+                document.getElementById("mensagem").style.display =
+                    "none";
+
+            }, 3000);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

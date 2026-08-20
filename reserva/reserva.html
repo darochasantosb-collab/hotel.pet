@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet - Reservas</title>
+
+    <link rel="stylesheet" href="../style/style.css">
+
+</head>
+
+<body>
+
+
+    <!-- ========================= -->
+    <!-- CABEÇALHO -->
+    <!-- ========================= -->
+
+    <header class="cabecalho">
+
+        <div class="logo">
+
+            <h1>
+                Hotel Pet
+            </h1>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="reserva.html">
+                Reservas
+            </a>
+
+            <a href="../pets/pets.html">
+                Pets
+            </a>
+
+            <a href="../usuarios/usuarios.html">
+                Usuários
+            </a>
+
+            <a href="../configuracoes/configuracoes.html">
+                Configurações
+            </a>
+
+            <a href="../index/index.html">
+                Sair
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ========================= -->
+    <!-- CONTEÚDO -->
+    <!-- ========================= -->
+
+    <main class="conteudo">
+
+
+        <!-- ========================= -->
+        <!-- LISTA DE RESERVAS -->
+        <!-- ========================= -->
+
+        <div id="listaReservas">
+
+
+            <div class="titulo-pagina">
+
+                <h2>
+                    Reservas
+                </h2>
+
+                <p>
+                    Gerenciamento das reservas do Hotel Pet
+                </p>
+
+            </div>
+
+
+
+            <!-- ========================= -->
+            <!-- PESQUISA -->
+            <!-- ========================= -->
+
+            <section class="pesquisa">
+
+                <h3>
+                    Pesquisar reserva
+                </h3>
+
+
+                <form onsubmit="pesquisarReserva(event)">
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="pesquisaPet">
+                            Nome do Pet
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pesquisaPet"
+                            placeholder="Digite o nome do Pet"
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="pesquisaStatus">
+                            Status
+                        </label>
+
+                        <select id="pesquisaStatus">
+
+                            <option value="">
+                                Todos
+                            </option>
+
+                            <option value="Agendada">
+                                Agendada
+                            </option>
+
+                            <option value="Em andamento">
+                                Em andamento
+                            </option>
+
+                            <option value="Finalizada">
+                                Finalizada
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="botao-pesquisar"
+                    >
+                        Pesquisar
+                    </button>
+
+
+                </form>
+
+            </section>
+
+
+
+            <!-- ========================= -->
+            <!-- LISTA -->
+            <!-- ========================= -->
+
+            <section class="lista-reservas">
+
+
+                <div class="cabecalho-lista">
+
+                    <h3>
+                        Reservas cadastradas
+                    </h3>
+
+
+                    <button
+                        type="button"
+                        class="botao-nova-reserva"
+                        onclick="novaReserva()"
+                    >
+                        + Nova Reserva
+                    </button>
+
+                </div>
+
+
+
+                <!-- RESERVA REX -->
+
+                <div
+                    class="reserva"
+                    id="reservaRex"
+                >
+
+                    <div class="reserva-informacoes">
+
+                        <h4>
+                            Rex
+                        </h4>
+
+
+                        <p>
+
+                            <strong>
+                                Proprietário:
+                            </strong>
+
+                            João Silva
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Entrada:
+                            </strong>
+
+                            20/08/2026
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Saída:
+                            </strong>
+
+                            25/08/2026
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Status:
+                            </strong>
+
+                            <span>
+                                Em andamento
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Total:
+                            </strong>
+
+                            R$ 400,00
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="visualizarReserva('Rex')"
+                        >
+                            Visualizar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-editar"
+                            onclick="editarReserva('Rex')"
+                        >
+                            Editar
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RESERVA MEL -->
+
+                <div
+                    class="reserva"
+                    id="reservaMel"
+                >
+
+                    <div class="reserva-informacoes">
+
+                        <h4>
+                            Mel
+                        </h4>
+
+
+                        <p>
+
+                            <strong>
+                                Proprietário:
+                            </strong>
+
+                            Maria Souza
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Entrada:
+                            </strong>
+
+                            10/08/2026
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Saída:
+                            </strong>
+
+                            15/08/2026
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Status:
+                            </strong>
+
+                            <span>
+                                Finalizada
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Total:
+                            </strong>
+
+                            R$ 400,00
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="visualizarReserva('Mel')"
+                        >
+                            Visualizar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-editar"
+                            onclick="editarReserva('Mel')"
+                        >
+                            Editar
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RESERVA THOR -->
+
+                <div
+                    class="reserva"
+                    id="reservaThor"
+                >
+
+                    <div class="reserva-informacoes">
+
+                        <h4>
+                            Thor
+                        </h4>
+
+
+                        <p>
+
+                            <strong>
+                                Proprietário:
+                            </strong>
+
+                            Carlos Oliveira
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Entrada:
+                            </strong>
+
+                            25/08/2026
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Saída:
+                            </strong>
+
+                            30/08/2026
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Status:
+                            </strong>
+
+                            <span>
+                                Agendada
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Total:
+                            </strong>
+
+                            R$ 400,00
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="visualizarReserva('Thor')"
+                        >
+                            Visualizar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-editar"
+                            onclick="editarReserva('Thor')"
+                        >
+                            Editar
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+
+
+        <!-- ========================= -->
+        <!-- VISUALIZAR RESERVA -->
+        <!-- ========================= -->
+
+        <div
+            id="visualizacaoReserva"
+            style="display: none;"
+        >
+
+
+            <div class="titulo-pagina">
+
+                <h2>
+                    Visualizar Reserva
+                </h2>
+
+                <p>
+                    Informações da estadia
+                </p>
+
+            </div>
+
+
+
+            <section class="lista-reservas">
+
+
+                <div class="reserva">
+
+
+                    <div class="reserva-informacoes">
+
+
+                        <h4 id="vReservaPet">
+                            Rex
+                        </h4>
+
+
+                        <p>
+
+                            <strong>
+                                Proprietário:
+                            </strong>
+
+                            <span id="vReservaProprietario">
+                                João Silva
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Data de entrada:
+                            </strong>
+
+                            <span id="vReservaEntrada">
+                                20/08/2026
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Data de saída:
+                            </strong>
+
+                            <span id="vReservaSaida">
+                                25/08/2026
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Valor da diária:
+                            </strong>
+
+                            R$
+
+                            <span id="vReservaDiaria">
+                                80,00
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Valor total:
+                            </strong>
+
+                            R$
+
+                            <span id="vReservaTotal">
+                                400,00
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Status:
+                            </strong>
+
+                            <span id="vReservaStatus">
+                                Em andamento
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Observações:
+                            </strong>
+
+                        </p>
+
+
+                        <p id="vReservaObservacao">
+
+                            O pet está se adaptando bem ao hotel.
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- IMAGENS -->
+
+            <section class="lista-reservas">
+
+
+                <h3>
+                    Acompanhamento do Pet
+                </h3>
+
+
+                <div class="reserva">
+
+
+                    <p>
+
+                        Durante a estadia, os funcionários podem
+                        adicionar informações e imagens do animal.
+
+                    </p>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- RECIBO -->
+
+            <section class="lista-reservas">
+
+
+                <h3>
+                    Recibo
+                </h3>
+
+
+                <div class="reserva">
+
+
+                    <p id="vReservaRecibo">
+
+                        O recibo será disponibilizado quando a
+                        reserva for finalizada.
+
+                    </p>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <div class="acoes">
+
+
+                <button
+                    type="button"
+                    class="botao-editar"
+                    onclick="editarReserva(reservaAtual)"
+                >
+                    Editar
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-visualizar"
+                    onclick="voltarReservas()"
+                >
+                    Voltar
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ========================= -->
+        <!-- EDITAR RESERVA -->
+        <!-- ========================= -->
+
+        <div
+            id="edicaoReserva"
+            style="display: none;"
+        >
+
+
+            <div class="titulo-pagina">
+
+                <h2>
+                    Editar Reserva
+                </h2>
+
+                <p>
+                    Alterar informações da reserva
+                </p>
+
+            </div>
+
+
+
+            <section class="pesquisa">
+
+
+                <form onsubmit="salvarReserva(event)">
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eReservaPet">
+                            Nome do Pet
+                        </label>
+
+                        <input
+                            type="text"
+                            id="eReservaPet"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eReservaProprietario">
+                            Proprietário
+                        </label>
+
+                        <input
+                            type="text"
+                            id="eReservaProprietario"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eReservaEntrada">
+                            Data de entrada
+                        </label>
+
+                        <input
+                            type="date"
+                            id="eReservaEntrada"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eReservaSaida">
+                            Data de saída
+                        </label>
+
+                        <input
+                            type="date"
+                            id="eReservaSaida"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eReservaStatus">
+                            Status
+                        </label>
+
+                        <select id="eReservaStatus">
+
+                            <option value="Agendada">
+                                Agendada
+                            </option>
+
+                            <option value="Em andamento">
+                                Em andamento
+                            </option>
+
+                            <option value="Finalizada">
+                                Finalizada
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eReservaObservacao">
+                            Observações
+                        </label>
+
+                        <textarea
+                            id="eReservaObservacao"
+                            rows="5"
+                            placeholder="Digite observações sobre a estadia"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eReservaImagem">
+                            Adicionar imagem
+                        </label>
+
+                        <input
+                            type="file"
+                            id="eReservaImagem"
+                            accept="image/*"
+                        >
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+
+                        <button
+                            type="submit"
+                            class="botao-editar"
+                        >
+                            Salvar alterações
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="voltarReservas()"
+                        >
+                            Cancelar
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- ========================= -->
+        <!-- NOVA RESERVA -->
+        <!-- ========================= -->
+
+        <div
+            id="novaReserva"
+            style="display: none;"
+        >
+
+
+            <div class="titulo-pagina">
+
+                <h2>
+                    Nova Reserva
+                </h2>
+
+                <p>
+                    Cadastre uma nova estadia
+                </p>
+
+            </div>
+
+
+
+            <section class="pesquisa">
+
+
+                <form onsubmit="cadastrarReserva(event)">
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nReservaPet">
+                            Nome do Pet
+                        </label>
+
+                        <select id="nReservaPet">
+
+                            <option>
+                                Rex
+                            </option>
+
+                            <option>
+                                Mel
+                            </option>
+
+                            <option>
+                                Thor
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nReservaProprietario">
+                            Proprietário
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nReservaProprietario"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nReservaEntrada">
+                            Data de entrada
+                        </label>
+
+                        <input
+                            type="date"
+                            id="nReservaEntrada"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nReservaSaida">
+                            Data de saída
+                        </label>
+
+                        <input
+                            type="date"
+                            id="nReservaSaida"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nReservaObservacao">
+                            Informações sobre o Pet
+                        </label>
+
+                        <textarea
+                            id="nReservaObservacao"
+                            rows="5"
+                            placeholder="Digite informações importantes sobre o Pet"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- VALOR -->
+
+                    <div class="reserva">
+
+                        <p>
+
+                            <strong>
+                                Valor da diária:
+                            </strong>
+
+                            R$ 80,00
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Valor total:
+                            </strong>
+
+                            R$
+
+                            <span id="novoValorTotal">
+                                0,00
+                            </span>
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+
+                        <button
+                            type="submit"
+                            class="botao-editar"
+                        >
+                            Cadastrar Reserva
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="voltarReservas()"
+                        >
+                            Cancelar
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+            </section>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script>
+
+
+        let reservaAtual = "";
+
+
+
+        // =========================
+        // ESCONDER TELAS
+        // =========================
+
+        function esconderTelasReservas() {
+
+            document.getElementById("listaReservas").style.display =
+                "none";
+
+            document.getElementById("visualizacaoReserva").style.display =
+                "none";
+
+            document.getElementById("edicaoReserva").style.display =
+                "none";
+
+            document.getElementById("novaReserva").style.display =
+                "none";
+
+        }
+
+
+
+        // =========================
+        // VISUALIZAR
+        // =========================
+
+        function visualizarReserva(pet) {
+
+            esconderTelasReservas();
+
+            document.getElementById("visualizacaoReserva").style.display =
+                "block";
+
+            reservaAtual = pet;
+
+
+
+            if (pet === "Rex") {
+
+                document.getElementById("vReservaPet").innerText =
+                    "Rex";
+
+                document.getElementById("vReservaProprietario").innerText =
+                    "João Silva";
+
+                document.getElementById("vReservaEntrada").innerText =
+                    "20/08/2026";
+
+                document.getElementById("vReservaSaida").innerText =
+                    "25/08/2026";
+
+                document.getElementById("vReservaDiaria").innerText =
+                    "80,00";
+
+                document.getElementById("vReservaTotal").innerText =
+                    "400,00";
+
+                document.getElementById("vReservaStatus").innerText =
+                    "Em andamento";
+
+                document.getElementById("vReservaObservacao").innerText =
+                    "O pet está se adaptando bem ao hotel.";
+
+                document.getElementById("vReservaRecibo").innerText =
+                    "A reserva ainda não foi finalizada.";
+
+            }
+
+
+
+            if (pet === "Mel") {
+
+                document.getElementById("vReservaPet").innerText =
+                    "Mel";
+
+                document.getElementById("vReservaProprietario").innerText =
+                    "Maria Souza";
+
+                document.getElementById("vReservaEntrada").innerText =
+                    "10/08/2026";
+
+                document.getElementById("vReservaSaida").innerText =
+                    "15/08/2026";
+
+                document.getElementById("vReservaDiaria").innerText =
+                    "80,00";
+
+                document.getElementById("vReservaTotal").innerText =
+                    "400,00";
+
+                document.getElementById("vReservaStatus").innerText =
+                    "Finalizada";
+
+                document.getElementById("vReservaObservacao").innerText =
+                    "Estadia finalizada sem problemas.";
+
+                document.getElementById("vReservaRecibo").innerText =
+                    "Recibo da estadia: R$ 400,00.";
+
+            }
+
+
+
+            if (pet === "Thor") {
+
+                document.getElementById("vReservaPet").innerText =
+                    "Thor";
+
+                document.getElementById("vReservaProprietario").innerText =
+                    "Carlos Oliveira";
+
+                document.getElementById("vReservaEntrada").innerText =
+                    "25/08/2026";
+
+                document.getElementById("vReservaSaida").innerText =
+                    "30/08/2026";
+
+                document.getElementById("vReservaDiaria").innerText =
+                    "80,00";
+
+                document.getElementById("vReservaTotal").innerText =
+                    "400,00";
+
+                document.getElementById("vReservaStatus").innerText =
+                    "Agendada";
+
+                document.getElementById("vReservaObservacao").innerText =
+                    "Reserva aguardando a chegada do Pet.";
+
+                document.getElementById("vReservaRecibo").innerText =
+                    "O recibo será disponibilizado após a finalização.";
+
+            }
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        // =========================
+        // EDITAR
+        // =========================
+
+        function editarReserva(pet) {
+
+            esconderTelasReservas();
+
+            document.getElementById("edicaoReserva").style.display =
+                "block";
+
+            reservaAtual = pet;
+
+
+
+            if (pet === "Rex") {
+
+                document.getElementById("eReservaPet").value =
+                    "Rex";
+
+                document.getElementById("eReservaProprietario").value =
+                    "João Silva";
+
+                document.getElementById("eReservaEntrada").value =
+                    "2026-08-20";
+
+                document.getElementById("eReservaSaida").value =
+                    "2026-08-25";
+
+                document.getElementById("eReservaStatus").value =
+                    "Em andamento";
+
+                document.getElementById("eReservaObservacao").value =
+                    "O pet está se adaptando bem ao hotel.";
+
+            }
+
+
+
+            if (pet === "Mel") {
+
+                document.getElementById("eReservaPet").value =
+                    "Mel";
+
+                document.getElementById("eReservaProprietario").value =
+                    "Maria Souza";
+
+                document.getElementById("eReservaEntrada").value =
+                    "2026-08-10";
+
+                document.getElementById("eReservaSaida").value =
+                    "2026-08-15";
+
+                document.getElementById("eReservaStatus").value =
+                    "Finalizada";
+
+                document.getElementById("eReservaObservacao").value =
+                    "Estadia finalizada sem problemas.";
+
+            }
+
+
+
+            if (pet === "Thor") {
+
+                document.getElementById("eReservaPet").value =
+                    "Thor";
+
+                document.getElementById("eReservaProprietario").value =
+                    "Carlos Oliveira";
+
+                document.getElementById("eReservaEntrada").value =
+                    "2026-08-25";
+
+                document.getElementById("eReservaSaida").value =
+                    "2026-08-30";
+
+                document.getElementById("eReservaStatus").value =
+                    "Agendada";
+
+                document.getElementById("eReservaObservacao").value =
+                    "Reserva aguardando a chegada do Pet.";
+
+            }
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        // =========================
+        // NOVA RESERVA
+        // =========================
+
+        function novaReserva() {
+
+            esconderTelasReservas();
+
+            document.getElementById("novaReserva").style.display =
+                "block";
+
+
+            document.getElementById("nReservaProprietario").value =
+                "";
+
+            document.getElementById("nReservaEntrada").value =
+                "";
+
+            document.getElementById("nReservaSaida").value =
+                "";
+
+            document.getElementById("nReservaObservacao").value =
+                "";
+
+            document.getElementById("novoValorTotal").innerText =
+                "0,00";
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        // =========================
+        // VOLTAR
+        // =========================
+
+        function voltarReservas() {
+
+            esconderTelasReservas();
+
+            document.getElementById("listaReservas").style.display =
+                "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        // =========================
+        // CALCULAR VALOR
+        // =========================
+
+        function calcularTotal() {
+
+            let entrada =
+                document.getElementById("nReservaEntrada").value;
+
+            let saida =
+                document.getElementById("nReservaSaida").value;
+
+
+            if (
+                entrada === "" ||
+                saida === ""
+            ) {
+
+                document.getElementById("novoValorTotal").innerText =
+                    "0,00";
+
+                return;
+
+            }
+
+
+            let dataEntrada =
+                new Date(entrada);
+
+            let dataSaida =
+                new Date(saida);
+
+
+            let diferenca =
+                dataSaida - dataEntrada;
+
+
+            let dias =
+                diferenca /
+                (1000 * 60 * 60 * 24);
+
+
+            if (dias <= 0) {
+
+                document.getElementById("novoValorTotal").innerText =
+                    "0,00";
+
+                return;
+
+            }
+
+
+            let total =
+                dias * 80;
+
+
+            document.getElementById("novoValorTotal").innerText =
+                total
+                .toFixed(2)
+                .replace(".", ",");
+
+        }
+
+
+
+        document
+        .getElementById("nReservaEntrada")
+        .addEventListener(
+            "change",
+            calcularTotal
+        );
+
+
+        document
+        .getElementById("nReservaSaida")
+        .addEventListener(
+            "change",
+            calcularTotal
+        );
+
+
+
+        // =========================
+        // SALVAR
+        // =========================
+
+        function salvarReserva(event) {
+
+            event.preventDefault();
+
+
+            let pet =
+                document.getElementById("eReservaPet").value;
+
+
+            let status =
+                document.getElementById("eReservaStatus").value;
+
+
+            alert(
+                "Reserva alterada com sucesso!\n\n" +
+                "Pet: " +
+                pet +
+                "\nStatus: " +
+                status
+            );
+
+
+            voltarReservas();
+
+        }
+
+
+
+        // =========================
+        // CADASTRAR
+        // =========================
+
+        function cadastrarReserva(event) {
+
+            event.preventDefault();
+
+
+            let pet =
+                document.getElementById("nReservaPet").value;
+
+
+            let proprietario =
+                document.getElementById("nReservaProprietario").value;
+
+
+            let entrada =
+                document.getElementById("nReservaEntrada").value;
+
+
+            let saida =
+                document.getElementById("nReservaSaida").value;
+
+
+            if (entrada >= saida) {
+
+                alert(
+                    "A data de saída deve ser posterior à data de entrada."
+                );
+
+                return;
+
+            }
+
+
+            alert(
+                "Reserva cadastrada com sucesso!\n\n" +
+                "Pet: " +
+                pet +
+                "\nProprietário: " +
+                proprietario +
+                "\nEntrada: " +
+                entrada +
+                "\nSaída: " +
+                saida
+            );
+
+
+            voltarReservas();
+
+        }
+
+
+
+        // =========================
+        // PESQUISAR
+        // =========================
+
+        function pesquisarReserva(event) {
+
+            event.preventDefault();
+
+
+            let nome =
+                document
+                .getElementById("pesquisaPet")
+                .value
+                .toLowerCase();
+
+
+            let status =
+                document
+                .getElementById("pesquisaStatus")
+                .value;
+
+
+            let reservas = {
+
+                Rex:
+                    document.getElementById("reservaRex"),
+
+                Mel:
+                    document.getElementById("reservaMel"),
+
+                Thor:
+                    document.getElementById("reservaThor")
+
+            };
+
+
+            Object.keys(reservas).forEach(
+                function(pet) {
+
+                    reservas[pet].style.display =
+                        "flex";
+
+                }
+            );
+
+
+            if (nome !== "") {
+
+                Object.keys(reservas).forEach(
+                    function(pet) {
+
+                        if (
+                            !pet
+                            .toLowerCase()
+                            .includes(nome)
+                        ) {
+
+                            reservas[pet].style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            if (status !== "") {
+
+                Object.keys(reservas).forEach(
+                    function(pet) {
+
+                        let texto =
+                            reservas[pet].innerText;
+
+
+                        if (!texto.includes(status)) {
+
+                            reservas[pet].style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet - Usuários</title>
+
+    <link rel="stylesheet" href="../style/style.css">
+
+</head>
+
+<body>
+
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho">
+
+        <div class="logo">
+
+            <h1>Hotel Pet</h1>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="../reserva/reserva.html">
+                Reservas
+            </a>
+
+            <a href="../pets/pets.html">
+                Pets
+            </a>
+
+            <a href="usuarios.html">
+                Usuários
+            </a>
+
+            <a href="../configuracoes/configuracoes.html">
+                Configurações
+            </a>
+
+            <a href="../index/index.html">
+                Sair
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="conteudo">
+
+
+        <!-- LISTA DE USUÁRIOS -->
+
+        <div id="listaUsuarios">
+
+
+            <div class="titulo-pagina">
+
+                <h2>
+                    Usuários
+                </h2>
+
+                <p>
+                    Gerenciamento dos usuários do Hotel Pet
+                </p>
+
+            </div>
+
+
+
+            <!-- PESQUISA -->
+
+            <section class="pesquisa">
+
+                <h3>
+                    Pesquisar usuário
+                </h3>
+
+
+                <form onsubmit="pesquisarUsuario(event)">
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="pesquisaUsuario">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pesquisaUsuario"
+                            placeholder="Digite o nome"
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="pesquisaFuncao">
+                            Função
+                        </label>
+
+                        <select id="pesquisaFuncao">
+
+                            <option value="">
+                                Todas
+                            </option>
+
+                            <option value="Cliente">
+                                Cliente
+                            </option>
+
+                            <option value="Funcionário">
+                                Funcionário
+                            </option>
+
+                            <option value="Gerente">
+                                Gerente
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="botao-pesquisar"
+                    >
+                        Pesquisar
+                    </button>
+
+
+                </form>
+
+            </section>
+
+
+
+            <!-- LISTA -->
+
+            <section class="lista-reservas">
+
+
+                <div class="cabecalho-lista">
+
+                    <h3>
+                        Usuários cadastrados
+                    </h3>
+
+
+                    <button
+                        type="button"
+                        class="botao-nova-reserva"
+                        onclick="novoUsuario()"
+                    >
+                        + Novo Usuário
+                    </button>
+
+                </div>
+
+
+
+                <!-- USUÁRIO 1 -->
+
+                <div
+                    class="reserva"
+                    id="usuarioJoao"
+                >
+
+                    <div class="reserva-informacoes">
+
+                        <h4>
+                            João Silva
+                        </h4>
+
+                        <p>
+
+                            <strong>E-mail:</strong>
+
+                            joao@email.com
+
+                        </p>
+
+                        <p>
+
+                            <strong>Telefone:</strong>
+
+                            (77) 99999-1111
+
+                        </p>
+
+                        <p>
+
+                            <strong>Função:</strong>
+
+                            Cliente
+
+                        </p>
+
+                        <p>
+
+                            <strong>Status:</strong>
+
+                            Ativo
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="visualizarUsuario('João Silva')"
+                        >
+                            Visualizar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-editar"
+                            onclick="editarUsuario('João Silva')"
+                        >
+                            Editar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-editar"
+                            onclick="removerUsuario('João Silva')"
+                        >
+                            Remover
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- USUÁRIO 2 -->
+
+                <div
+                    class="reserva"
+                    id="usuarioMaria"
+                >
+
+                    <div class="reserva-informacoes">
+
+                        <h4>
+                            Maria Souza
+                        </h4>
+
+                        <p>
+
+                            <strong>E-mail:</strong>
+
+                            maria@email.com
+
+                        </p>
+
+                        <p>
+
+                            <strong>Telefone:</strong>
+
+                            (77) 98888-2222
+
+                        </p>
+
+                        <p>
+
+                            <strong>Função:</strong>
+
+                            Funcionário
+
+                        </p>
+
+                        <p>
+
+                            <strong>Status:</strong>
+
+                            Ativo
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="visualizarUsuario('Maria Souza')"
+                        >
+                            Visualizar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-editar"
+                            onclick="editarUsuario('Maria Souza')"
+                        >
+                            Editar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-editar"
+                            onclick="removerUsuario('Maria Souza')"
+                        >
+                            Remover
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- USUÁRIO 3 -->
+
+                <div
+                    class="reserva"
+                    id="usuarioCarlos"
+                >
+
+                    <div class="reserva-informacoes">
+
+                        <h4>
+                            Carlos Oliveira
+                        </h4>
+
+                        <p>
+
+                            <strong>E-mail:</strong>
+
+                            carlos@email.com
+
+                        </p>
+
+                        <p>
+
+                            <strong>Telefone:</strong>
+
+                            (77) 97777-3333
+
+                        </p>
+
+                        <p>
+
+                            <strong>Função:</strong>
+
+                            Gerente
+
+                        </p>
+
+                        <p>
+
+                            <strong>Status:</strong>
+
+                            Ativo
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="visualizarUsuario('Carlos Oliveira')"
+                        >
+                            Visualizar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-editar"
+                            onclick="editarUsuario('Carlos Oliveira')"
+                        >
+                            Editar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-editar"
+                            onclick="removerUsuario('Carlos Oliveira')"
+                        >
+                            Remover
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+
+
+        <!-- VISUALIZAR USUÁRIO -->
+
+        <div
+            id="visualizacaoUsuario"
+            style="display: none;"
+        >
+
+
+            <div class="titulo-pagina">
+
+                <h2>
+                    Visualizar Usuário
+                </h2>
+
+                <p>
+                    Informações do usuário
+                </p>
+
+            </div>
+
+
+
+            <section class="lista-reservas">
+
+
+                <div class="reserva">
+
+                    <div class="reserva-informacoes">
+
+                        <h4 id="vUsuarioNome">
+                            João Silva
+                        </h4>
+
+
+                        <p>
+
+                            <strong>E-mail:</strong>
+
+                            <span id="vUsuarioEmail">
+                                joao@email.com
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>Telefone:</strong>
+
+                            <span id="vUsuarioTelefone">
+                                (77) 99999-1111
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>Função:</strong>
+
+                            <span id="vUsuarioFuncao">
+                                Cliente
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>Status:</strong>
+
+                            <span id="vUsuarioStatus">
+                                Ativo
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <div class="acoes">
+
+                <button
+                    type="button"
+                    class="botao-editar"
+                    onclick="editarUsuario(usuarioAtual)"
+                >
+                    Editar
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-visualizar"
+                    onclick="voltarUsuarios()"
+                >
+                    Voltar
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- EDITAR USUÁRIO -->
+
+        <div
+            id="edicaoUsuario"
+            style="display: none;"
+        >
+
+
+            <div class="titulo-pagina">
+
+                <h2>
+                    Editar Usuário
+                </h2>
+
+                <p>
+                    Alterar informações do usuário
+                </p>
+
+            </div>
+
+
+
+            <section class="pesquisa">
+
+
+                <form onsubmit="salvarUsuario(event)">
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eUsuarioNome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="eUsuarioNome"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eUsuarioEmail">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="eUsuarioEmail"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eUsuarioTelefone">
+                            Telefone
+                        </label>
+
+                        <input
+                            type="text"
+                            id="eUsuarioTelefone"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eUsuarioFuncao">
+                            Função
+                        </label>
+
+                        <select id="eUsuarioFuncao">
+
+                            <option value="Cliente">
+                                Cliente
+                            </option>
+
+                            <option value="Funcionário">
+                                Funcionário
+                            </option>
+
+                            <option value="Gerente">
+                                Gerente
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="eUsuarioStatus">
+                            Status
+                        </label>
+
+                        <select id="eUsuarioStatus">
+
+                            <option value="Ativo">
+                                Ativo
+                            </option>
+
+                            <option value="Inativo">
+                                Inativo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+                        <button
+                            type="submit"
+                            class="botao-editar"
+                        >
+                            Salvar alterações
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="voltarUsuarios()"
+                        >
+                            Cancelar
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- NOVO USUÁRIO -->
+
+        <div
+            id="novoUsuario"
+            style="display: none;"
+        >
+
+
+            <div class="titulo-pagina">
+
+                <h2>
+                    Cadastrar Usuário
+                </h2>
+
+                <p>
+                    Cadastre um novo usuário
+                </p>
+
+            </div>
+
+
+
+            <section class="pesquisa">
+
+
+                <form onsubmit="cadastrarUsuario(event)">
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nUsuarioNome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nUsuarioNome"
+                            placeholder="Digite o nome"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nUsuarioEmail">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="nUsuarioEmail"
+                            placeholder="Digite o e-mail"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nUsuarioTelefone">
+                            Telefone
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nUsuarioTelefone"
+                            placeholder="Digite o telefone"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nUsuarioFuncao">
+                            Função
+                        </label>
+
+                        <select id="nUsuarioFuncao">
+
+                            <option value="Cliente">
+                                Cliente
+                            </option>
+
+                            <option value="Funcionário">
+                                Funcionário
+                            </option>
+
+                            <option value="Gerente">
+                                Gerente
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="nUsuarioStatus">
+                            Status
+                        </label>
+
+                        <select id="nUsuarioStatus">
+
+                            <option value="Ativo">
+                                Ativo
+                            </option>
+
+                            <option value="Inativo">
+                                Inativo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="acoes">
+
+                        <button
+                            type="submit"
+                            class="botao-editar"
+                        >
+                            Cadastrar Usuário
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="botao-visualizar"
+                            onclick="voltarUsuarios()"
+                        >
+                            Cancelar
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </section>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        let usuarioAtual = "";
+
+
+
+        // ESCONDER TODAS AS TELAS
+
+        function esconderTelasUsuarios() {
+
+            document.getElementById("listaUsuarios").style.display =
+                "none";
+
+            document.getElementById("visualizacaoUsuario").style.display =
+                "none";
+
+            document.getElementById("edicaoUsuario").style.display =
+                "none";
+
+            document.getElementById("novoUsuario").style.display =
+                "none";
+
+        }
+
+
+
+        // VISUALIZAR
+
+        function visualizarUsuario(nome) {
+
+            esconderTelasUsuarios();
+
+            document.getElementById("visualizacaoUsuario").style.display =
+                "block";
+
+            usuarioAtual = nome;
+
+
+            if (nome === "João Silva") {
+
+                document.getElementById("vUsuarioNome").innerText =
+                    "João Silva";
+
+                document.getElementById("vUsuarioEmail").innerText =
+                    "joao@email.com";
+
+                document.getElementById("vUsuarioTelefone").innerText =
+                    "(77) 99999-1111";
+
+                document.getElementById("vUsuarioFuncao").innerText =
+                    "Cliente";
+
+                document.getElementById("vUsuarioStatus").innerText =
+                    "Ativo";
+
+            }
+
+
+            if (nome === "Maria Souza") {
+
+                document.getElementById("vUsuarioNome").innerText =
+                    "Maria Souza";
+
+                document.getElementById("vUsuarioEmail").innerText =
+                    "maria@email.com";
+
+                document.getElementById("vUsuarioTelefone").innerText =
+                    "(77) 98888-2222";
+
+                document.getElementById("vUsuarioFuncao").innerText =
+                    "Funcionário";
+
+                document.getElementById("vUsuarioStatus").innerText =
+                    "Ativo";
+
+            }
+
+
+            if (nome === "Carlos Oliveira") {
+
+                document.getElementById("vUsuarioNome").innerText =
+                    "Carlos Oliveira";
+
+                document.getElementById("vUsuarioEmail").innerText =
+                    "carlos@email.com";
+
+                document.getElementById("vUsuarioTelefone").innerText =
+                    "(77) 97777-3333";
+
+                document.getElementById("vUsuarioFuncao").innerText =
+                    "Gerente";
+
+                document.getElementById("vUsuarioStatus").innerText =
+                    "Ativo";
+
+            }
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        // EDITAR
+
+        function editarUsuario(nome) {
+
+            esconderTelasUsuarios();
+
+            document.getElementById("edicaoUsuario").style.display =
+                "block";
+
+            usuarioAtual = nome;
+
+
+            if (nome === "João Silva") {
+
+                document.getElementById("eUsuarioNome").value =
+                    "João Silva";
+
+                document.getElementById("eUsuarioEmail").value =
+                    "joao@email.com";
+
+                document.getElementById("eUsuarioTelefone").value =
+                    "(77) 99999-1111";
+
+                document.getElementById("eUsuarioFuncao").value =
+                    "Cliente";
+
+                document.getElementById("eUsuarioStatus").value =
+                    "Ativo";
+
+            }
+
+
+            if (nome === "Maria Souza") {
+
+                document.getElementById("eUsuarioNome").value =
+                    "Maria Souza";
+
+                document.getElementById("eUsuarioEmail").value =
+                    "maria@email.com";
+
+                document.getElementById("eUsuarioTelefone").value =
+                    "(77) 98888-2222";
+
+                document.getElementById("eUsuarioFuncao").value =
+                    "Funcionário";
+
+                document.getElementById("eUsuarioStatus").value =
+                    "Ativo";
+
+            }
+
+
+            if (nome === "Carlos Oliveira") {
+
+                document.getElementById("eUsuarioNome").value =
+                    "Carlos Oliveira";
+
+                document.getElementById("eUsuarioEmail").value =
+                    "carlos@email.com";
+
+                document.getElementById("eUsuarioTelefone").value =
+                    "(77) 97777-3333";
+
+                document.getElementById("eUsuarioFuncao").value =
+                    "Gerente";
+
+                document.getElementById("eUsuarioStatus").value =
+                    "Ativo";
+
+            }
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        // NOVO USUÁRIO
+
+        function novoUsuario() {
+
+            esconderTelasUsuarios();
+
+            document.getElementById("novoUsuario").style.display =
+                "block";
+
+
+            document.getElementById("nUsuarioNome").value =
+                "";
+
+            document.getElementById("nUsuarioEmail").value =
+                "";
+
+            document.getElementById("nUsuarioTelefone").value =
+                "";
+
+            document.getElementById("nUsuarioFuncao").value =
+                "Cliente";
+
+            document.getElementById("nUsuarioStatus").value =
+                "Ativo";
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        // VOLTAR
+
+        function voltarUsuarios() {
+
+            esconderTelasUsuarios();
+
+            document.getElementById("listaUsuarios").style.display =
+                "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        // SALVAR
+
+        function salvarUsuario(event) {
+
+            event.preventDefault();
+
+
+            let nome =
+                document.getElementById("eUsuarioNome").value;
+
+            let funcao =
+                document.getElementById("eUsuarioFuncao").value;
+
+
+            alert(
+                "Usuário alterado com sucesso!\n\n" +
+                "Nome: " +
+                nome +
+                "\nFunção: " +
+                funcao
+            );
+
+
+            voltarUsuarios();
+
+        }
+
+
+
+        // CADASTRAR
+
+        function cadastrarUsuario(event) {
+
+            event.preventDefault();
+
+
+            let nome =
+                document.getElementById("nUsuarioNome").value;
+
+            let email =
+                document.getElementById("nUsuarioEmail").value;
+
+            let funcao =
+                document.getElementById("nUsuarioFuncao").value;
+
+
+            alert(
+                "Usuário cadastrado com sucesso!\n\n" +
+                "Nome: " +
+                nome +
+                "\nE-mail: " +
+                email +
+                "\nFunção: " +
+                funcao
+            );
+
+
+            voltarUsuarios();
+
+        }
+
+
+
+        // REMOVER
+
+        function removerUsuario(nome) {
+
+            let confirmar =
+                confirm(
+                    "Deseja realmente remover o usuário " +
+                    nome +
+                    "?"
+                );
+
+
+            if (confirmar) {
+
+                alert(
+                    "Usuário " +
+                    nome +
+                    " removido com sucesso!"
+                );
+
+            }
+
+        }
+
+
+
+        // PESQUISAR
+
+        function pesquisarUsuario(event) {
+
+            event.preventDefault();
+
+
+            let nome =
+                document
+                .getElementById("pesquisaUsuario")
+                .value
+                .toLowerCase();
+
+
+            let funcao =
+                document
+                .getElementById("pesquisaFuncao")
+                .value;
+
+
+            let usuarios = {
+
+                "João Silva":
+                    document.getElementById("usuarioJoao"),
+
+                "Maria Souza":
+                    document.getElementById("usuarioMaria"),
+
+                "Carlos Oliveira":
+                    document.getElementById("usuarioCarlos")
+
+            };
+
+
+            Object.keys(usuarios).forEach(
+                function(nomeUsuario) {
+
+                    usuarios[nomeUsuario].style.display =
+                        "flex";
+
+                }
+            );
+
+
+            if (nome !== "") {
+
+                Object.keys(usuarios).forEach(
+                    function(nomeUsuario) {
+
+                        if (
+                            !nomeUsuario
+                            .toLowerCase()
+                            .includes(nome)
+                        ) {
+
+                            usuarios[nomeUsuario].style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            if (funcao !== "") {
+
+                Object.keys(usuarios).forEach(
+                    function(nomeUsuario) {
+
+                        let texto =
+                            usuarios[nomeUsuario].innerText;
+
+
+                        if (!texto.includes(funcao)) {
+
+                            usuarios[nomeUsuario].style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
