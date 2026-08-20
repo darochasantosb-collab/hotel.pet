@@ -182,7 +182,7 @@ document.getElementById("formCadastro").onsubmit = function(event) {
     }, 1000);
 };
 
-/* LOGIN */
+/* LOGIN — SEM A MENSAGEM "Crie uma conta primeiro" */
 document.getElementById("formLogin").onsubmit = function(event) {
     event.preventDefault();
 
@@ -190,19 +190,17 @@ document.getElementById("formLogin").onsubmit = function(event) {
     const senha = document.getElementById("senhaLogin").value;
     const dados = localStorage.getItem("hotelPetUsuario");
 
-    if (!dados) {
-        document.getElementById("msgLogin").innerText = "Crie uma conta primeiro.";
-        return;
+    if (dados) {
+        const usuario = JSON.parse(dados);
+        if (email === usuario.email && senha === usuario.senha) {
+            localStorage.setItem("hotelPetLogado", "true");
+            window.location.href = "usuarios/usuarios.html";
+            return;
+        }
     }
 
-    const usuario = JSON.parse(dados);
-
-    if (email === usuario.email && senha === usuario.senha) {
-        localStorage.setItem("hotelPetLogado", "true");
-        window.location.href = "usuarios/usuarios.html";
-    } else {
-        document.getElementById("msgLogin").innerText = "E-mail ou senha incorretos.";
-    }
+    // Se não tiver cadastro ou estiver errado, mostra só isso:
+    document.getElementById("msgLogin").innerText = "E-mail ou senha incorretos.";
 };
 </script>
 </body>
