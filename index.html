@@ -96,7 +96,7 @@
 
         <!-- TELA DE LOGIN -->
         <div id="login">
-            <h2>Entrar</h2>
+            
             <form id="formLogin">
                 <div class="campo">
                     <label>E-mail</label>
@@ -140,7 +140,7 @@
     </div>
 
 <script>
-/* ABRIR CADASTRO */
+/* ABRIR TELA DE CADASTRO */
 document.getElementById("abrirCadastro").onclick = function() {
     document.getElementById("login").classList.add("escondido");
     document.getElementById("cadastro").classList.remove("escondido");
@@ -171,7 +171,6 @@ document.getElementById("formCadastro").onsubmit = function(event) {
         return;
     }
 
-    // Salva o usuário
     const usuario = { nome: nome, email: email, senha: senha };
     localStorage.setItem("hotelPetUsuario", JSON.stringify(usuario));
 
@@ -184,18 +183,31 @@ document.getElementById("formCadastro").onsubmit = function(event) {
     }, 1200);
 };
 
-/* LOGIN — Aceita qualquer e-mail/senha OU usa conta cadastrada */
+/* LOGIN */
 document.getElementById("formLogin").onsubmit = function(event) {
     event.preventDefault();
 
     const email = document.getElementById("emailLogin").value.trim().toLowerCase();
     const senha = document.getElementById("senhaLogin").value;
+    const dadosSalvos = localStorage.getItem("hotelPetUsuario");
 
-    if (email && senha.length >= 4) {
+    if (!dadosSalvos) {
+        if (email && senha.length >= 4) {
+            localStorage.setItem("hotelPetLogado", "true");
+            window.location.href = "../usuarios/usuarios.html";
+        } else {
+            document.getElementById("msgLogin").innerText = "Digite um e-mail e senha com pelo menos 4 caracteres.";
+        }
+        return;
+    }
+
+    const usuario = JSON.parse(dadosSalvos);
+
+    if (email === usuario.email && senha === usuario.senha) {
         localStorage.setItem("hotelPetLogado", "true");
-        window.location.href = "usuarios/usuarios.html";
+        window.location.href = "../usuarios/usuarios.html";
     } else {
-        document.getElementById("msgLogin").innerText = "Digite um e-mail e senha com pelo menos 4 caracteres.";
+        document.getElementById("msgLogin").innerText = "E-mail ou senha incorretos.";
     }
 };
 </script>
