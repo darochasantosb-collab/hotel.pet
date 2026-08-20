@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,76 +12,14 @@
 
     <link rel="stylesheet" href="../style/style.css">
 
-    <style>
-
-        .configuracoes-container {
-            max-width: 700px;
-            margin: 30px auto;
-        }
-
-        .config-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-        }
-
-        .config-campo {
-            margin-bottom: 25px;
-        }
-
-        .config-campo label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .config-campo input {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 13px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        .botao-alterar {
-            background: #4caf50;
-            color: white;
-            border: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .botao-alterar:hover {
-            opacity: 0.9;
-        }
-
-        .mensagem {
-            margin-top: 20px;
-            padding: 15px;
-            background: #e8f5e9;
-            color: #2e7d32;
-            border-radius: 8px;
-            display: none;
-        }
-
-        .valor-atual {
-            margin-top: 10px;
-            color: #555;
-        }
-
-    </style>
-
 </head>
-
 
 <body>
 
 
+    <!-- ========================= -->
     <!-- CABEÇALHO -->
+    <!-- ========================= -->
 
     <header class="cabecalho">
 
@@ -121,7 +60,9 @@
 
 
 
+    <!-- ========================= -->
     <!-- CONTEÚDO -->
+    <!-- ========================= -->
 
     <main class="conteudo">
 
@@ -133,94 +74,285 @@
             </h2>
 
             <p>
-                Gerenciamento das configurações do Hotel Pet
+                Gerencie as configurações do Hotel Pet
             </p>
 
         </div>
 
 
 
-        <div class="configuracoes-container">
+        <!-- ========================= -->
+        <!-- DADOS DO HOTEL -->
+        <!-- ========================= -->
+
+        <section class="pesquisa">
+
+            <h3>
+                Dados do Hotel
+            </h3>
 
 
-            <div class="config-card">
+            <div class="campo-pesquisa">
 
+                <label for="nomeHotel">
+                    Nome do Hotel
+                </label>
 
-                <!-- VALOR DA DIÁRIA -->
-
-                <div class="config-campo">
-
-                    <label for="valorDiaria">
-                        Valor da diária
-                    </label>
-
-                    <input
-                        type="number"
-                        id="valorDiaria"
-                        value="80"
-                        min="0"
-                        step="0.01"
-                    >
-
-                    <p class="valor-atual">
-
-                        Valor atual:
-                        R$ <span id="valorAtual">80,00</span>
-
-                    </p>
-
-                </div>
-
-
-
-                <!-- VAGAS -->
-
-                <div class="config-campo">
-
-                    <label for="vagasDisponiveis">
-                        Número de vagas disponíveis
-                    </label>
-
-                    <input
-                        type="number"
-                        id="vagasDisponiveis"
-                        value="20"
-                        min="0"
-                    >
-
-                    <p class="valor-atual">
-
-                        Vagas atuais:
-                        <span id="vagasAtuais">20</span>
-
-                    </p>
-
-                </div>
-
-
-
-                <!-- BOTÃO -->
-
-                <button
-                    class="botao-alterar"
-                    onclick="alterarConfiguracoes()"
+                <input
+                    type="text"
+                    id="nomeHotel"
+                    value="Hotel Pet"
                 >
-                    Alterar configurações
-                </button>
-
-
-
-                <!-- MENSAGEM -->
-
-                <div
-                    id="mensagem"
-                    class="mensagem"
-                >
-                    Configurações alteradas com sucesso!
-                </div>
-
 
             </div>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="telefoneHotel">
+                    Telefone
+                </label>
+
+                <input
+                    type="text"
+                    id="telefoneHotel"
+                    value="(77) 99999-9999"
+                >
+
+            </div>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="emailHotel">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="emailHotel"
+                    value="contato@hotelpet.com"
+                >
+
+            </div>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="enderecoHotel">
+                    Endereço
+                </label>
+
+                <input
+                    type="text"
+                    id="enderecoHotel"
+                    value="Centro - Barreiras, BA"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================= -->
+        <!-- CONFIGURAÇÕES DE RESERVA -->
+        <!-- ========================= -->
+
+        <section class="pesquisa">
+
+            <h3>
+                Configurações de Reserva
+            </h3>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="valorDiaria">
+                    Valor da diária
+                </label>
+
+                <input
+                    type="number"
+                    id="valorDiaria"
+                    value="80"
+                    min="0"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="horarioEntrada">
+                    Horário de entrada
+                </label>
+
+                <input
+                    type="time"
+                    id="horarioEntrada"
+                    value="08:00"
+                >
+
+            </div>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="horarioSaida">
+                    Horário de saída
+                </label>
+
+                <input
+                    type="time"
+                    id="horarioSaida"
+                    value="18:00"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================= -->
+        <!-- PREFERÊNCIAS -->
+        <!-- ========================= -->
+
+        <section class="pesquisa">
+
+            <h3>
+                Preferências
+            </h3>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="notificacao">
+                    Notificações
+                </label>
+
+                <select id="notificacao">
+
+                    <option value="sim">
+                        Ativadas
+                    </option>
+
+                    <option value="nao">
+                        Desativadas
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="tema">
+                    Tema do sistema
+                </label>
+
+                <select id="tema">
+
+                    <option value="claro">
+                        Claro
+                    </option>
+
+                    <option value="escuro">
+                        Escuro
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================= -->
+        <!-- SEGURANÇA -->
+        <!-- ========================= -->
+
+        <section class="pesquisa">
+
+            <h3>
+                Segurança
+            </h3>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="senhaAtual">
+                    Senha atual
+                </label>
+
+                <input
+                    type="password"
+                    id="senhaAtual"
+                    placeholder="Digite a senha atual"
+                >
+
+            </div>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="novaSenha">
+                    Nova senha
+                </label>
+
+                <input
+                    type="password"
+                    id="novaSenha"
+                    placeholder="Digite a nova senha"
+                >
+
+            </div>
+
+
+            <div class="campo-pesquisa">
+
+                <label for="confirmarSenha">
+                    Confirmar nova senha
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmarSenha"
+                    placeholder="Digite novamente a nova senha"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================= -->
+        <!-- BOTÕES -->
+        <!-- ========================= -->
+
+        <div class="acoes">
+
+            <button
+                type="button"
+                class="botao-editar"
+                onclick="salvarConfiguracoes()"
+            >
+                Salvar configurações
+            </button>
+
+
+            <button
+                type="button"
+                class="botao-visualizar"
+                onclick="voltarInicio()"
+            >
+                Voltar
+            </button>
 
         </div>
 
@@ -229,21 +361,39 @@
 
 
 
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
     <script>
 
-        function alterarConfiguracoes() {
 
-            let valor =
+        function salvarConfiguracoes() {
+
+            const nome =
+                document.getElementById("nomeHotel").value;
+
+            const telefone =
+                document.getElementById("telefoneHotel").value;
+
+            const email =
+                document.getElementById("emailHotel").value;
+
+            const valor =
                 document.getElementById("valorDiaria").value;
 
-            let vagas =
-                document.getElementById("vagasDisponiveis").value;
+
+            const novaSenha =
+                document.getElementById("novaSenha").value;
+
+            const confirmarSenha =
+                document.getElementById("confirmarSenha").value;
 
 
-            if (valor === "" || vagas === "") {
+            if (novaSenha !== confirmarSenha) {
 
                 alert(
-                    "Preencha todos os campos."
+                    "A nova senha e a confirmação não são iguais."
                 );
 
                 return;
@@ -251,24 +401,38 @@
             }
 
 
-            document.getElementById("valorAtual").innerText =
-                Number(valor).toFixed(2).replace(".", ",");
+            if (
+                nome === "" ||
+                telefone === "" ||
+                email === "" ||
+                valor === ""
+            ) {
+
+                alert(
+                    "Preencha todos os campos obrigatórios."
+                );
+
+                return;
+
+            }
 
 
-            document.getElementById("vagasAtuais").innerText =
-                vagas;
+            alert(
+                "Configurações salvas com sucesso!\n\n" +
+                "Hotel: " + nome +
+                "\nTelefone: " + telefone +
+                "\nE-mail: " + email +
+                "\nValor da diária: R$ " + valor
+            );
+
+        }
 
 
-            document.getElementById("mensagem").style.display =
-                "block";
 
+        function voltarInicio() {
 
-            setTimeout(function() {
-
-                document.getElementById("mensagem").style.display =
-                    "none";
-
-            }, 3000);
+            window.location.href =
+                "../pets/pets.html";
 
         }
 
@@ -278,3 +442,4 @@
 </body>
 
 </html>
+```

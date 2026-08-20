@@ -8,132 +8,6 @@
     <title>Hotel Pet - Pets</title>
 
     <link rel="stylesheet" href="../style/style.css">
-
-    <style>
-        .pets-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-
-        .pet-card {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-            text-align: center;
-        }
-
-        .pet-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 15px;
-        }
-
-        .pet-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .pet-card p {
-            margin: 6px 0;
-        }
-
-        .pet-acoes {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 18px;
-            flex-wrap: wrap;
-        }
-
-        .pet-acoes button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .botao-visualizar {
-            background: #6c8cff;
-            color: white;
-        }
-
-        .botao-editar {
-            background: #f0a500;
-            color: white;
-        }
-
-        .botao-pesquisar {
-            background: #4caf50;
-            color: white;
-            padding: 10px 18px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .botao-novo {
-            background: #4caf50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .foto-visualizacao {
-            width: 280px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 15px;
-            display: block;
-            margin: 20px auto;
-        }
-
-        .formulario-pet {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-            margin-top: 20px;
-        }
-
-        .campo {
-            margin-bottom: 18px;
-        }
-
-        .campo label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: bold;
-        }
-
-        .campo input,
-        .campo select,
-        .campo textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-sizing: border-box;
-        }
-
-        .botoes-formulario {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .botoes-formulario button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
@@ -160,7 +34,7 @@
                 Usuários
             </a>
 
-            <a href="../configuracoes/configuracoes.html">
+            <a href="../configurações/configuracoes.html">
                 Configurações
             </a>
 
@@ -186,7 +60,7 @@
                 <h2>Pets</h2>
 
                 <p>
-                    Gerenciamento dos animais cadastrados
+                    Gerenciamento dos animais do Hotel Pet
                 </p>
 
             </div>
@@ -196,14 +70,16 @@
 
             <section class="pesquisa">
 
-                <h3>Pesquisar Pet</h3>
+                <h3>
+                    Pesquisar Pet
+                </h3>
 
                 <form onsubmit="pesquisarPet(event)">
 
-                    <div class="campo">
+                    <div class="campo-pesquisa">
 
                         <label for="pesquisaPet">
-                            Nome do Pet
+                            Nome
                         </label>
 
                         <input
@@ -213,6 +89,32 @@
                         >
 
                     </div>
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="pesquisaEspecie">
+                            Espécie
+                        </label>
+
+                        <select id="pesquisaEspecie">
+
+                            <option value="">
+                                Todas
+                            </option>
+
+                            <option value="Cachorro">
+                                Cachorro
+                            </option>
+
+                            <option value="Gato">
+                                Gato
+                            </option>
+
+                        </select>
+
+                    </div>
+
 
                     <button
                         type="submit"
@@ -226,57 +128,78 @@
             </section>
 
 
-            <!-- NOVO PET -->
+            <!-- LISTA -->
 
-            <div style="margin-top: 25px;">
+            <section class="lista-reservas">
 
-                <button
-                    class="botao-novo"
-                    onclick="novoPet()"
-                >
-                    + Novo Pet
-                </button>
+                <div class="cabecalho-lista">
 
-            </div>
+                    <h3>
+                        Pets cadastrados
+                    </h3>
 
+                    <button
+                        type="button"
+                        class="botao-nova-reserva"
+                        onclick="novoPet()"
+                    >
+                        + Novo Pet
+                    </button>
 
-            <!-- PETS -->
-
-            <div class="pets-container">
+                </div>
 
 
                 <!-- REX -->
 
                 <div
-                    class="pet-card"
+                    class="reserva"
                     id="petRex"
                 >
 
-                    <img
-                        src="imagens/rex.png"
-                        alt="Rex - Golden Retriever"
-                    >
+                    <div class="reserva-informacoes">
 
-                    <h3>Rex</h3>
+                        <img
+                            src="imagens/Rex.png"
+                            alt="Foto do Rex"
+                            style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; margin-bottom: 15px;"
+                        >
 
-                    <p>
-                        <strong>Tipo:</strong>
-                        Cachorro
-                    </p>
+                        <h4>
+                            Rex
+                        </h4>
 
-                    <p>
-                        <strong>Raça:</strong>
-                        Golden Retriever
-                    </p>
+                        <p>
+                            <strong>Espécie:</strong>
+                            Cachorro
+                        </p>
 
-                    <p>
-                        <strong>Tamanho:</strong>
-                        Grande
-                    </p>
+                        <p>
+                            <strong>Raça:</strong>
+                            Golden Retriever
+                        </p>
 
-                    <div class="pet-acoes">
+                        <p>
+                            <strong>Idade:</strong>
+                            4 anos
+                        </p>
+
+                        <p>
+                            <strong>Proprietário:</strong>
+                            João Silva
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            Ativo
+                        </p>
+
+                    </div>
+
+
+                    <div class="acoes">
 
                         <button
+                            type="button"
                             class="botao-visualizar"
                             onclick="visualizarPet('Rex')"
                         >
@@ -284,6 +207,7 @@
                         </button>
 
                         <button
+                            type="button"
                             class="botao-editar"
                             onclick="editarPet('Rex')"
                         >
@@ -298,35 +222,54 @@
                 <!-- MEL -->
 
                 <div
-                    class="pet-card"
+                    class="reserva"
                     id="petMel"
                 >
 
-                    <img
-                        src="imagens/mel.png"
-                        alt="Mel - Gato Persa"
-                    >
+                    <div class="reserva-informacoes">
 
-                    <h3>Mel</h3>
+                        <img
+                            src="imagens/Mel.png"
+                            alt="Foto da Mel"
+                            style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; margin-bottom: 15px;"
+                        >
 
-                    <p>
-                        <strong>Tipo:</strong>
-                        Gato
-                    </p>
+                        <h4>
+                            Mel
+                        </h4>
 
-                    <p>
-                        <strong>Raça:</strong>
-                        Persa
-                    </p>
+                        <p>
+                            <strong>Espécie:</strong>
+                            Gato
+                        </p>
 
-                    <p>
-                        <strong>Tamanho:</strong>
-                        Médio
-                    </p>
+                        <p>
+                            <strong>Raça:</strong>
+                            Persa
+                        </p>
 
-                    <div class="pet-acoes">
+                        <p>
+                            <strong>Idade:</strong>
+                            3 anos
+                        </p>
+
+                        <p>
+                            <strong>Proprietário:</strong>
+                            Maria Souza
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            Ativo
+                        </p>
+
+                    </div>
+
+
+                    <div class="acoes">
 
                         <button
+                            type="button"
                             class="botao-visualizar"
                             onclick="visualizarPet('Mel')"
                         >
@@ -334,6 +277,7 @@
                         </button>
 
                         <button
+                            type="button"
                             class="botao-editar"
                             onclick="editarPet('Mel')"
                         >
@@ -348,35 +292,54 @@
                 <!-- THOR -->
 
                 <div
-                    class="pet-card"
+                    class="reserva"
                     id="petThor"
                 >
 
-                    <img
-                        src="imagens/thor.png"
-                        alt="Thor - Labrador"
-                    >
+                    <div class="reserva-informacoes">
 
-                    <h3>Thor</h3>
+                        <img
+                            src="imagens/Thor.png"
+                            alt="Foto do Thor"
+                            style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; margin-bottom: 15px;"
+                        >
 
-                    <p>
-                        <strong>Tipo:</strong>
-                        Cachorro
-                    </p>
+                        <h4>
+                            Thor
+                        </h4>
 
-                    <p>
-                        <strong>Raça:</strong>
-                        Labrador
-                    </p>
+                        <p>
+                            <strong>Espécie:</strong>
+                            Cachorro
+                        </p>
 
-                    <p>
-                        <strong>Tamanho:</strong>
-                        Grande
-                    </p>
+                        <p>
+                            <strong>Raça:</strong>
+                            Labrador
+                        </p>
 
-                    <div class="pet-acoes">
+                        <p>
+                            <strong>Idade:</strong>
+                            2 anos
+                        </p>
+
+                        <p>
+                            <strong>Proprietário:</strong>
+                            Carlos Oliveira
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            Ativo
+                        </p>
+
+                    </div>
+
+
+                    <div class="acoes">
 
                         <button
+                            type="button"
                             class="botao-visualizar"
                             onclick="visualizarPet('Thor')"
                         >
@@ -384,6 +347,7 @@
                         </button>
 
                         <button
+                            type="button"
                             class="botao-editar"
                             onclick="editarPet('Thor')"
                         >
@@ -394,12 +358,12 @@
 
                 </div>
 
-            </div>
+            </section>
 
         </div>
 
 
-        <!-- VISUALIZAÇÃO DO PET -->
+        <!-- VISUALIZAÇÃO -->
 
         <div
             id="visualizacaoPet"
@@ -408,7 +372,9 @@
 
             <div class="titulo-pagina">
 
-                <h2>Visualizar Pet</h2>
+                <h2>
+                    Visualizar Pet
+                </h2>
 
                 <p>
                     Informações do animal
@@ -417,85 +383,85 @@
             </div>
 
 
-            <section class="formulario-pet">
+            <section class="lista-reservas">
 
-                <img
-                    id="fotoVisualizacao"
-                    class="foto-visualizacao"
-                    src="imagens/rex.png"
-                    alt="Pet"
-                >
+                <div class="reserva">
 
+                    <div class="reserva-informacoes">
 
-                <h2
-                    id="nomeVisualizacao"
-                    style="text-align: center;"
-                >
-                    Rex
-                </h2>
+                        <img
+                            id="vPetImagem"
+                            src="imagens/Rex.png"
+                            alt="Foto do Pet"
+                            style="width: 200px; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 15px;"
+                        >
 
+                        <h4 id="vPetNome">
+                            Rex
+                        </h4>
 
-                <p>
-                    <strong>Tipo:</strong>
+                        <p>
+                            <strong>Espécie:</strong>
+                            <span id="vPetEspecie">
+                                Cachorro
+                            </span>
+                        </p>
 
-                    <span id="tipoVisualizacao">
-                        Cachorro
-                    </span>
-                </p>
+                        <p>
+                            <strong>Raça:</strong>
+                            <span id="vPetRaca">
+                                Golden Retriever
+                            </span>
+                        </p>
 
+                        <p>
+                            <strong>Idade:</strong>
+                            <span id="vPetIdade">
+                                4 anos
+                            </span>
+                        </p>
 
-                <p>
-                    <strong>Raça:</strong>
+                        <p>
+                            <strong>Proprietário:</strong>
+                            <span id="vPetProprietario">
+                                João Silva
+                            </span>
+                        </p>
 
-                    <span id="racaVisualizacao">
-                        Golden Retriever
-                    </span>
-                </p>
+                        <p>
+                            <strong>Status:</strong>
+                            <span id="vPetStatus">
+                                Ativo
+                            </span>
+                        </p>
 
+                        <p>
+                            <strong>Observações:</strong>
+                        </p>
 
-                <p>
-                    <strong>Tamanho:</strong>
+                        <p id="vPetObservacao">
+                            Pet tranquilo e sociável.
+                        </p>
 
-                    <span id="tamanhoVisualizacao">
-                        Grande
-                    </span>
-                </p>
+                    </div>
 
-
-                <p>
-                    <strong>Proprietário:</strong>
-
-                    <span id="proprietarioVisualizacao">
-                        João Silva
-                    </span>
-                </p>
-
-
-                <p>
-                    <strong>Histórico:</strong>
-                </p>
-
-
-                <p id="historicoVisualizacao">
-
-                    O Pet possui uma reserva no Hotel Pet.
-
-                </p>
+                </div>
 
             </section>
 
 
-            <div class="botoes-formulario">
+            <div class="acoes">
 
                 <button
+                    type="button"
                     class="botao-editar"
                     onclick="editarPet(petAtual)"
                 >
                     Editar
                 </button>
 
-
                 <button
+                    type="button"
                     class="botao-visualizar"
                     onclick="voltarPets()"
                 >
@@ -507,121 +473,154 @@
         </div>
 
 
-        <!-- NOVO PET -->
+        <!-- EDIÇÃO -->
 
         <div
-            id="novoPet"
+            id="edicaoPet"
             style="display: none;"
         >
 
             <div class="titulo-pagina">
 
-                <h2>Cadastrar Pet</h2>
+                <h2>
+                    Editar Pet
+                </h2>
 
                 <p>
-                    Cadastre um novo animal
+                    Alterar informações do animal
                 </p>
 
             </div>
 
 
-            <section class="formulario-pet">
+            <section class="pesquisa">
 
-                <form onsubmit="cadastrarPet(event)">
+                <form onsubmit="salvarPet(event)">
 
+                    <div class="campo-pesquisa">
 
-                    <div class="campo">
-
-                        <label for="nomeNovo">
+                        <label for="ePetNome">
                             Nome
                         </label>
 
                         <input
                             type="text"
-                            id="nomeNovo"
+                            id="ePetNome"
                             required
                         >
 
                     </div>
 
 
-                    <div class="campo">
+                    <div class="campo-pesquisa">
 
-                        <label for="tipoNovo">
-                            Tipo de animal
+                        <label for="ePetEspecie">
+                            Espécie
                         </label>
 
-                        <select id="tipoNovo">
+                        <select id="ePetEspecie">
 
-                            <option>Cachorro</option>
+                            <option value="Cachorro">
+                                Cachorro
+                            </option>
 
-                            <option>Gato</option>
-
-                            <option>Outro</option>
+                            <option value="Gato">
+                                Gato
+                            </option>
 
                         </select>
 
                     </div>
 
 
-                    <div class="campo">
+                    <div class="campo-pesquisa">
 
-                        <label for="racaNovo">
+                        <label for="ePetRaca">
                             Raça
                         </label>
 
                         <input
                             type="text"
-                            id="racaNovo"
+                            id="ePetRaca"
                             required
                         >
 
                     </div>
 
 
-                    <div class="campo">
+                    <div class="campo-pesquisa">
 
-                        <label for="tamanhoNovo">
-                            Tamanho
+                        <label for="ePetIdade">
+                            Idade
                         </label>
 
-                        <select id="tamanhoNovo">
+                        <input
+                            type="text"
+                            id="ePetIdade"
+                            required
+                        >
 
-                            <option>Pequeno</option>
+                    </div>
 
-                            <option>Médio</option>
 
-                            <option>Grande</option>
+                    <div class="campo-pesquisa">
+
+                        <label for="ePetProprietario">
+                            Proprietário
+                        </label>
+
+                        <input
+                            type="text"
+                            id="ePetProprietario"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo-pesquisa">
+
+                        <label for="ePetStatus">
+                            Status
+                        </label>
+
+                        <select id="ePetStatus">
+
+                            <option value="Ativo">
+                                Ativo
+                            </option>
+
+                            <option value="Inativo">
+                                Inativo
+                            </option>
 
                         </select>
 
                     </div>
 
 
-                    <div class="campo">
+                    <div class="campo-pesquisa">
 
-                        <label for="fotoNovo">
-                            Foto do Pet
+                        <label for="ePetObservacao">
+                            Observações
                         </label>
 
-                        <input
-                            type="file"
-                            id="fotoNovo"
-                            accept="image/*"
-                        >
+                        <textarea
+                            id="ePetObservacao"
+                            rows="5"
+                        ></textarea>
 
                     </div>
 
 
-                    <div class="botoes-formulario">
+                    <div class="acoes">
 
                         <button
                             type="submit"
                             class="botao-editar"
                         >
-                            Cadastrar Pet
+                            Salvar alterações
                         </button>
-
 
                         <button
                             type="button"
@@ -640,121 +639,123 @@
         </div>
 
 
-        <!-- EDITAR PET -->
+        <!-- NOVO PET -->
 
         <div
-            id="edicaoPet"
+            id="novoPet"
             style="display: none;"
         >
 
             <div class="titulo-pagina">
 
-                <h2>Editar Pet</h2>
+                <h2>
+                    Cadastrar Pet
+                </h2>
 
                 <p>
-                    Alterar informações do animal
+                    Cadastre um novo animal
                 </p>
 
             </div>
 
 
-            <section class="formulario-pet">
+            <section class="pesquisa">
 
-                <form onsubmit="salvarPet(event)">
+                <form onsubmit="cadastrarPet(event)">
 
+                    <div class="campo-pesquisa">
 
-                    <div class="campo">
-
-                        <label for="nomeEditar">
+                        <label for="nPetNome">
                             Nome
                         </label>
 
                         <input
                             type="text"
-                            id="nomeEditar"
+                            id="nPetNome"
+                            placeholder="Digite o nome"
                             required
                         >
 
                     </div>
 
 
-                    <div class="campo">
+                    <div class="campo-pesquisa">
 
-                        <label for="tipoEditar">
-                            Tipo
+                        <label for="nPetEspecie">
+                            Espécie
                         </label>
 
-                        <select id="tipoEditar">
+                        <select id="nPetEspecie">
 
-                            <option>Cachorro</option>
+                            <option value="Cachorro">
+                                Cachorro
+                            </option>
 
-                            <option>Gato</option>
-
-                            <option>Outro</option>
+                            <option value="Gato">
+                                Gato
+                            </option>
 
                         </select>
 
                     </div>
 
 
-                    <div class="campo">
+                    <div class="campo-pesquisa">
 
-                        <label for="racaEditar">
+                        <label for="nPetRaca">
                             Raça
                         </label>
 
                         <input
                             type="text"
-                            id="racaEditar"
+                            id="nPetRaca"
+                            placeholder="Digite a raça"
                             required
                         >
 
                     </div>
 
 
-                    <div class="campo">
+                    <div class="campo-pesquisa">
 
-                        <label for="tamanhoEditar">
-                            Tamanho
-                        </label>
-
-                        <select id="tamanhoEditar">
-
-                            <option>Pequeno</option>
-
-                            <option>Médio</option>
-
-                            <option>Grande</option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="campo">
-
-                        <label for="fotoEditar">
-                            Alterar foto
+                        <label for="nPetIdade">
+                            Idade
                         </label>
 
                         <input
-                            type="file"
-                            id="fotoEditar"
-                            accept="image/*"
+                            type="text"
+                            id="nPetIdade"
+                            placeholder="Digite a idade"
+                            required
                         >
 
                     </div>
 
 
-                    <div class="botoes-formulario">
+                    <div class="campo-pesquisa">
+
+                        <label for="nPetProprietario">
+                            Proprietário
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nPetProprietario"
+                            placeholder="Digite o proprietário"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="acoes">
 
                         <button
                             type="submit"
                             class="botao-editar"
                         >
-                            Salvar alterações
+                            Cadastrar Pet
                         </button>
-
 
                         <button
                             type="button"
@@ -782,22 +783,22 @@
         let petAtual = "";
 
 
-        function esconderTelas() {
+        function esconderTelasPets() {
 
             document.getElementById("listaPets").style.display = "none";
 
             document.getElementById("visualizacaoPet").style.display = "none";
 
-            document.getElementById("novoPet").style.display = "none";
-
             document.getElementById("edicaoPet").style.display = "none";
+
+            document.getElementById("novoPet").style.display = "none";
 
         }
 
 
         function visualizarPet(nome) {
 
-            esconderTelas();
+            esconderTelasPets();
 
             document.getElementById("visualizacaoPet").style.display = "block";
 
@@ -806,102 +807,90 @@
 
             if (nome === "Rex") {
 
-                document.getElementById("fotoVisualizacao").src =
-                    "imagens/rex.png";
+                document.getElementById("vPetImagem").src =
+                    "imagens/Rex.png";
 
-                document.getElementById("nomeVisualizacao").innerText =
+                document.getElementById("vPetNome").innerText =
                     "Rex";
 
-                document.getElementById("tipoVisualizacao").innerText =
+                document.getElementById("vPetEspecie").innerText =
                     "Cachorro";
 
-                document.getElementById("racaVisualizacao").innerText =
+                document.getElementById("vPetRaca").innerText =
                     "Golden Retriever";
 
-                document.getElementById("tamanhoVisualizacao").innerText =
-                    "Grande";
+                document.getElementById("vPetIdade").innerText =
+                    "4 anos";
 
-                document.getElementById("proprietarioVisualizacao").innerText =
+                document.getElementById("vPetProprietario").innerText =
                     "João Silva";
 
-                document.getElementById("historicoVisualizacao").innerText =
-                    "Rex possui histórico de estadia no Hotel Pet.";
+                document.getElementById("vPetStatus").innerText =
+                    "Ativo";
+
+                document.getElementById("vPetObservacao").innerText =
+                    "Pet tranquilo e sociável.";
 
             }
 
 
             if (nome === "Mel") {
 
-                document.getElementById("fotoVisualizacao").src =
-                    "imagens/mel.png";
+                document.getElementById("vPetImagem").src =
+                    "imagens/Mel.png";
 
-                document.getElementById("nomeVisualizacao").innerText =
+                document.getElementById("vPetNome").innerText =
                     "Mel";
 
-                document.getElementById("tipoVisualizacao").innerText =
+                document.getElementById("vPetEspecie").innerText =
                     "Gato";
 
-                document.getElementById("racaVisualizacao").innerText =
+                document.getElementById("vPetRaca").innerText =
                     "Persa";
 
-                document.getElementById("tamanhoVisualizacao").innerText =
-                    "Médio";
+                document.getElementById("vPetIdade").innerText =
+                    "3 anos";
 
-                document.getElementById("proprietarioVisualizacao").innerText =
+                document.getElementById("vPetProprietario").innerText =
                     "Maria Souza";
 
-                document.getElementById("historicoVisualizacao").innerText =
-                    "Mel possui histórico de estadia no Hotel Pet.";
+                document.getElementById("vPetStatus").innerText =
+                    "Ativo";
+
+                document.getElementById("vPetObservacao").innerText =
+                    "Pet tranquila e carinhosa.";
 
             }
 
 
             if (nome === "Thor") {
 
-                document.getElementById("fotoVisualizacao").src =
-                    "imagens/thor.png";
+                document.getElementById("vPetImagem").src =
+                    "imagens/Thor.png";
 
-                document.getElementById("nomeVisualizacao").innerText =
+                document.getElementById("vPetNome").innerText =
                     "Thor";
 
-                document.getElementById("tipoVisualizacao").innerText =
+                document.getElementById("vPetEspecie").innerText =
                     "Cachorro";
 
-                document.getElementById("racaVisualizacao").innerText =
+                document.getElementById("vPetRaca").innerText =
                     "Labrador";
 
-                document.getElementById("tamanhoVisualizacao").innerText =
-                    "Grande";
+                document.getElementById("vPetIdade").innerText =
+                    "2 anos";
 
-                document.getElementById("proprietarioVisualizacao").innerText =
+                document.getElementById("vPetProprietario").innerText =
                     "Carlos Oliveira";
 
-                document.getElementById("historicoVisualizacao").innerText =
-                    "Thor possui uma reserva agendada no Hotel Pet.";
+                document.getElementById("vPetStatus").innerText =
+                    "Ativo";
+
+                document.getElementById("vPetObservacao").innerText =
+                    "Pet brincalhão e muito amigável.";
 
             }
 
-            window.scrollTo(0, 0);
-
-        }
-
-
-        function voltarPets() {
-
-            esconderTelas();
-
-            document.getElementById("listaPets").style.display = "block";
-
-            window.scrollTo(0, 0);
-
-        }
-
-
-        function novoPet() {
-
-            esconderTelas();
-
-            document.getElementById("novoPet").style.display = "block";
 
             window.scrollTo(0, 0);
 
@@ -910,7 +899,7 @@
 
         function editarPet(nome) {
 
-            esconderTelas();
+            esconderTelasPets();
 
             document.getElementById("edicaoPet").style.display = "block";
 
@@ -919,43 +908,77 @@
 
             if (nome === "Rex") {
 
-                document.getElementById("nomeEditar").value = "Rex";
-
-                document.getElementById("tipoEditar").value = "Cachorro";
-
-                document.getElementById("racaEditar").value =
-                    "Golden Retriever";
-
-                document.getElementById("tamanhoEditar").value =
-                    "Grande";
+                document.getElementById("ePetNome").value = "Rex";
+                document.getElementById("ePetEspecie").value = "Cachorro";
+                document.getElementById("ePetRaca").value = "Golden Retriever";
+                document.getElementById("ePetIdade").value = "4 anos";
+                document.getElementById("ePetProprietario").value = "João Silva";
+                document.getElementById("ePetStatus").value = "Ativo";
+                document.getElementById("ePetObservacao").value =
+                    "Pet tranquilo e sociável.";
 
             }
 
 
             if (nome === "Mel") {
 
-                document.getElementById("nomeEditar").value = "Mel";
-
-                document.getElementById("tipoEditar").value = "Gato";
-
-                document.getElementById("racaEditar").value = "Persa";
-
-                document.getElementById("tamanhoEditar").value = "Médio";
+                document.getElementById("ePetNome").value = "Mel";
+                document.getElementById("ePetEspecie").value = "Gato";
+                document.getElementById("ePetRaca").value = "Persa";
+                document.getElementById("ePetIdade").value = "3 anos";
+                document.getElementById("ePetProprietario").value = "Maria Souza";
+                document.getElementById("ePetStatus").value = "Ativo";
+                document.getElementById("ePetObservacao").value =
+                    "Pet tranquila e carinhosa.";
 
             }
 
 
             if (nome === "Thor") {
 
-                document.getElementById("nomeEditar").value = "Thor";
-
-                document.getElementById("tipoEditar").value = "Cachorro";
-
-                document.getElementById("racaEditar").value = "Labrador";
-
-                document.getElementById("tamanhoEditar").value = "Grande";
+                document.getElementById("ePetNome").value = "Thor";
+                document.getElementById("ePetEspecie").value = "Cachorro";
+                document.getElementById("ePetRaca").value = "Labrador";
+                document.getElementById("ePetIdade").value = "2 anos";
+                document.getElementById("ePetProprietario").value = "Carlos Oliveira";
+                document.getElementById("ePetStatus").value = "Ativo";
+                document.getElementById("ePetObservacao").value =
+                    "Pet brincalhão e muito amigável.";
 
             }
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        function novoPet() {
+
+            esconderTelasPets();
+
+            document.getElementById("novoPet").style.display = "block";
+
+            document.getElementById("nPetNome").value = "";
+
+            document.getElementById("nPetRaca").value = "";
+
+            document.getElementById("nPetIdade").value = "";
+
+            document.getElementById("nPetProprietario").value = "";
+
+            document.getElementById("nPetEspecie").value = "Cachorro";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        function voltarPets() {
+
+            esconderTelasPets();
+
+            document.getElementById("listaPets").style.display = "block";
 
             window.scrollTo(0, 0);
 
@@ -966,8 +989,12 @@
 
             event.preventDefault();
 
+            let nome =
+                document.getElementById("ePetNome").value;
+
             alert(
-                "Informações do Pet alteradas com sucesso!"
+                "Pet alterado com sucesso!\n\n" +
+                "Pet: " + nome
             );
 
             voltarPets();
@@ -980,12 +1007,15 @@
             event.preventDefault();
 
             let nome =
-                document.getElementById("nomeNovo").value;
+                document.getElementById("nPetNome").value;
+
+            let especie =
+                document.getElementById("nPetEspecie").value;
 
             alert(
-                "Pet " +
-                nome +
-                " cadastrado com sucesso!"
+                "Pet cadastrado com sucesso!\n\n" +
+                "Nome: " + nome +
+                "\nEspécie: " + especie
             );
 
             voltarPets();
@@ -997,11 +1027,16 @@
 
             event.preventDefault();
 
-            let pesquisa =
+            let nome =
                 document
                 .getElementById("pesquisaPet")
                 .value
                 .toLowerCase();
+
+            let especie =
+                document
+                .getElementById("pesquisaEspecie")
+                .value;
 
 
             let pets = {
@@ -1018,32 +1053,46 @@
             };
 
 
-            Object.keys(pets).forEach(
-                function(nome) {
+            Object.keys(pets).forEach(function(pet) {
 
-                    pets[nome].style.display = "block";
+                pets[pet].style.display = "flex";
 
-                }
-            );
+            });
 
 
-            if (pesquisa !== "") {
+            if (nome !== "") {
 
-                Object.keys(pets).forEach(
-                    function(nome) {
+                Object.keys(pets).forEach(function(pet) {
 
-                        if (
-                            !nome
-                            .toLowerCase()
-                            .includes(pesquisa)
-                        ) {
+                    if (
+                        !pet
+                        .toLowerCase()
+                        .includes(nome)
+                    ) {
 
-                            pets[nome].style.display = "none";
-
-                        }
+                        pets[pet].style.display = "none";
 
                     }
-                );
+
+                });
+
+            }
+
+
+            if (especie !== "") {
+
+                Object.keys(pets).forEach(function(pet) {
+
+                    let texto =
+                        pets[pet].innerText;
+
+                    if (!texto.includes(especie)) {
+
+                        pets[pet].style.display = "none";
+
+                    }
+
+                });
 
             }
 

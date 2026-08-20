@@ -1,59 +1,369 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Hotel Pet - Login</title>
 
     <link rel="stylesheet" href="../style/style.css">
+
 </head>
 
-<body>
+<body class="pagina-login">
 
-    <div class="login-container">
 
-        <div class="login-box">
+    <!-- ========================= -->
+    <!-- LOGIN -->
+    <!-- ========================= -->
 
-            <h1>Hotel Pet</h1>
+    <div class="login-container" id="telaLogin">
 
-            <p>Gerenciamento de Hospedagem para Pets</p>
+        <div class="login-card">
 
-            <form>
+            <div class="login-logo">
+                🐾
+            </div>
 
-                <div class="campo">
-                    <label for="usuario">Usuário</label>
+            <h1>
+                Hotel Pet
+            </h1>
 
-                    <input 
-                        type="text"
-                        id="usuario"
-                        name="usuario"
-                        placeholder="Digite seu usuário"
+            <p class="login-subtitulo">
+                Cuidado e carinho para o seu melhor amigo
+            </p>
+
+
+            <form onsubmit="entrar(event)">
+
+                <div class="campo-login">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        required
                     >
+
                 </div>
 
-                <div class="campo">
-                    <label for="senha">Senha</label>
 
-                    <input 
+                <div class="campo-login">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+                    <input
                         type="password"
                         id="senha"
-                        name="senha"
                         placeholder="Digite sua senha"
+                        required
                     >
+
                 </div>
 
-                <a href="../reserva/reserva.html" class="botao-entrar">
+
+                <button
+                    type="submit"
+                    class="botao-login"
+                >
                     Entrar
-                </a>
+                </button>
 
             </form>
+
+
+            <div class="login-criar">
+
+                <span>
+                    Ainda não possui uma conta?
+                </span>
+
+                <button
+                    type="button"
+                    onclick="mostrarCriarConta()"
+                >
+                    Criar conta
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
+
+
+    <!-- ========================= -->
+    <!-- CRIAR CONTA -->
+    <!-- ========================= -->
+
+    <div
+        class="login-container"
+        id="telaCriarConta"
+        style="display: none;"
+    >
+
+        <div class="login-card">
+
+            <div class="login-logo">
+                🐾
+            </div>
+
+            <h1>
+                Criar conta
+            </h1>
+
+            <p class="login-subtitulo">
+                Cadastre-se para acessar o Hotel Pet
+            </p>
+
+
+            <form onsubmit="criarConta(event)">
+
+
+                <div class="campo-login">
+
+                    <label for="nomeCadastro">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomeCadastro"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo-login">
+
+                    <label for="emailCadastro">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="emailCadastro"
+                        placeholder="Digite seu e-mail"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo-login">
+
+                    <label for="senhaCadastro">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senhaCadastro"
+                        placeholder="Digite sua senha"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo-login">
+
+                    <label for="confirmarSenha">
+                        Confirmar senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmarSenha"
+                        placeholder="Digite a senha novamente"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="botao-login"
+                >
+                    Criar conta
+                </button>
+
+            </form>
+
+
+            <div class="login-criar">
+
+                <span>
+                    Já possui uma conta?
+                </span>
+
+                <button
+                    type="button"
+                    onclick="mostrarLogin()"
+                >
+                    Voltar para o login
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script>
+
+
+        // =========================
+        // ENTRAR
+        // =========================
+
+        function entrar(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document.getElementById("email").value;
+
+            const senha =
+                document.getElementById("senha").value;
+
+
+            if (
+                email === "" ||
+                senha === ""
+            ) {
+
+                alert(
+                    "Digite o e-mail e a senha."
+                );
+
+                return;
+
+            }
+
+
+            // Qualquer e-mail e senha preenchidos entram
+
+            window.location.href =
+                "../pets/pets.html";
+
+        }
+
+
+
+        // =========================
+        // MOSTRAR CRIAR CONTA
+        // =========================
+
+        function mostrarCriarConta() {
+
+            document.getElementById("telaLogin").style.display =
+                "none";
+
+            document.getElementById("telaCriarConta").style.display =
+                "flex";
+
+        }
+
+
+
+        // =========================
+        // MOSTRAR LOGIN
+        // =========================
+
+        function mostrarLogin() {
+
+            document.getElementById("telaCriarConta").style.display =
+                "none";
+
+            document.getElementById("telaLogin").style.display =
+                "flex";
+
+        }
+
+
+
+        // =========================
+        // CRIAR CONTA
+        // =========================
+
+        function criarConta(event) {
+
+            event.preventDefault();
+
+
+            const nome =
+                document.getElementById("nomeCadastro").value;
+
+            const email =
+                document.getElementById("emailCadastro").value;
+
+            const senha =
+                document.getElementById("senhaCadastro").value;
+
+            const confirmarSenha =
+                document.getElementById("confirmarSenha").value;
+
+
+            if (senha !== confirmarSenha) {
+
+                alert(
+                    "As senhas não são iguais."
+                );
+
+                return;
+
+            }
+
+
+            alert(
+                "Conta criada com sucesso!\n\n" +
+                "Nome: " + nome +
+                "\nE-mail: " + email
+            );
+
+
+            // Coloca o e-mail cadastrado no login
+
+            document.getElementById("email").value =
+                email;
+
+
+            document.getElementById("senha").value =
+                senha;
+
+
+            mostrarLogin();
+
+        }
+
+    </script>
+
+
 </body>
 
 </html>
+```
+
+
