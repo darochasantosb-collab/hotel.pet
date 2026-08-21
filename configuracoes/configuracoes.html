@@ -17,7 +17,7 @@
             <a href="../pets/pets.html">Pets</a>
             <a href="../usuarios/usuarios.html">Usuários</a>
             <a href="configuracoes.html">Configurações</a>
-            <a href="../index.html">Sair</a>
+            <a href="#" onclick="sairDoSistema(); return false;">Sair</a>
         </nav>
     </header>
 
@@ -106,19 +106,53 @@
     </main>
 
     <script>
+        // Carregar configurações salvas ao abrir a página
+        window.onload = function() {
+            const config = localStorage.getItem("hotelPetConfig");
+            if (config) {
+                const cfg = JSON.parse(config);
+                if (cfg.nomeHotel) document.getElementById("nomeHotel").value = cfg.nomeHotel;
+                if (cfg.telefoneHotel) document.getElementById("telefoneHotel").value = cfg.telefoneHotel;
+                if (cfg.emailHotel) document.getElementById("emailHotel").value = cfg.emailHotel;
+                if (cfg.enderecoHotel) document.getElementById("enderecoHotel").value = cfg.enderecoHotel;
+                if (cfg.valorDiaria) document.getElementById("valorDiaria").value = cfg.valorDiaria;
+                if (cfg.horarioEntrada) document.getElementById("horarioEntrada").value = cfg.horarioEntrada;
+                if (cfg.horarioSaida) document.getElementById("horarioSaida").value = cfg.horarioSaida;
+                if (cfg.notificacao) document.getElementById("notificacao").value = cfg.notificacao;
+                if (cfg.tema) document.getElementById("tema").value = cfg.tema;
+            }
+        };
+
+        // Salvar configurações e ALTERAR SENHA com QUALQUER senha atual
         function salvarConfiguracoes() {
             const nome = document.getElementById("nomeHotel").value;
             const telefone = document.getElementById("telefoneHotel").value;
             const email = document.getElementById("emailHotel").value;
+            const endereco = document.getElementById("enderecoHotel").value;
             const valor = document.getElementById("valorDiaria").value;
-            const senhaAtual = document.getElementById("senhaAtual").value;
-            const novaSenha = document.getElementById("novaSenha").value;
-            const confirmarSenha = document.getElementById("confirmarSenha").value;
+            const horarioEntrada = document.getElementById("horarioEntrada").value;
+            const horarioSaida = document.getElementById("horarioSaida").value;
+            const notificacao = document.getElementById("notificacao").value;
+            const tema = document.getElementById("tema").value;
+
+            const senhaAtual = document.getElementById("senhaAtual").value.trim();
+            const novaSenha = document.getElementById("novaSenha").value.trim();
+            const confirmarSenha = document.getElementById("confirmarSenha").value.trim();
+
             const dadosSalvos = localStorage.getItem("hotelPetUsuario");
 
-            if (novaSenha || confirmarSenha) {
-                if (!dadosSalvos) {
-                    alert("Crie uma conta primeiro para alterar a senha.");
+            // Permite alterar senha com QUALQUER senha atual
+            if (novaSenha || confirmarSenha || senhaAtual) {
+                if (!senhaAtual) {
+                    alert("Digite a senha atual.");
+                    return;
+                }
+                if (!novaSenha) {
+                    alert("Digite a nova senha.");
+                    return;
+                }
+                if (!confirmarSenha) {
+                    alert("Confirme a nova senha.");
                     return;
                 }
                 if (novaSenha !== confirmarSenha) {
@@ -129,19 +163,35 @@
                     alert("A nova senha precisa ter pelo menos 4 caracteres.");
                     return;
                 }
-                const usuario = JSON.parse(dadosSalvos);
-                if (senhaAtual !== usuario.senha) {
-                    alert("A senha atual está incorreta.");
+                if (!dadosSalvos) {
+                    alert("Crie uma conta primeiro para alterar a senha.");
                     return;
                 }
+
+                const usuario = JSON.parse(dadosSalvos);
+                // ALTERA SENHA SEM CONFERIR A SENHA ATUAL
                 usuario.senha = novaSenha;
                 localStorage.setItem("hotelPetUsuario", JSON.stringify(usuario));
+                alert("Senha alterada com sucesso!");
             }
 
             if (!nome || !telefone || !email || !valor) {
                 alert("Preencha todos os campos obrigatórios.");
                 return;
             }
+
+            const configuracoes = {
+                nomeHotel: nome,
+                telefoneHotel: telefone,
+                emailHotel: email,
+                enderecoHotel: endereco,
+                valorDiaria: valor,
+                horarioEntrada: horarioEntrada,
+                horarioSaida: horarioSaida,
+                notificacao: notificacao,
+                tema: tema
+            };
+            localStorage.setItem("hotelPetConfig", JSON.stringify(configuracoes));
 
             alert(
                 "Configurações salvas com sucesso!\n\n" +
@@ -152,7 +202,13 @@
             );
         }
 
+        // Botão Voltar — volta para a página anterior
         function voltarInicio() {
+            window.history.back();
+        }
+
+        // Botão Sair — volta para a página inicial
+        function sairDoSistema() {
             window.location.href = "../index.html";
         }
     </script>
